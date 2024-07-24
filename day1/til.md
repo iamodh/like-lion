@@ -6,7 +6,7 @@
 <h1>Orange</h1>
 ```
 
-content에 의미를 부여한다.
+content에 의미를 부여한다. (semantic markup)
 
 검색엔진에서 Orange를 `가장 높은 단계의 제목`으로 인식한다.
 
