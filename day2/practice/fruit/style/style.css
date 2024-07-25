@@ -1,0 +1,30 @@
+/* Reset CSS*/
+a {
+  text-decoration: none;
+  color: black;
+}
+/* Style CSS */
+
+article {
+  width: 360px;
+  background-color: aliceblue;
+  margin: 50px auto;
+  text-align: center;
+  padding: 20px 40px;
+  border: 10px dotted black;
+  border-radius: 0 0 40px 40px;
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  font-size: 36px;
+  color: forestgreen;
+}
+
+li {
+  text-align: left;
+  font-size: 20px;
+}

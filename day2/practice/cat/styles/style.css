@@ -1,0 +1,35 @@
+/* Reset CSS */
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Style CSS */
+
+article {
+  width: 440px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #fff;
+  padding: 0 20px 10px 20px;
+  border-radius: 20px 20px 0 0;
+  border-bottom: 20px solid #494c53;
+}
+
+article div {
+  width: fit-content;
+  margin: 0 auto 20px auto;
+  border-bottom: 10px solid #494c53;
+}
+
+p {
+  background-color: #ebecf0;
+  padding: 20px;
+  font-size: 14px;
+}
+
+span {
+  font-weight: bold;
+  font-size: 24px;
+}
