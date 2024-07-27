@@ -1,0 +1,38 @@
+/* Reset */
+
+body {
+  background-color: #fff;
+}
+
+h1,
+p {
+  margin: 0;
+  font-weight: initial;
+  font-size: inherit;
+}
+
+/* Styles */
+
+.animal {
+  width: 300px;
+  margin: 60px auto;
+}
+
+.description {
+  padding: 10px 20px 48px 20px;
+  background-color: #9c6035;
+  font-family: Arial;
+  border-radius: 0 0 20px 20px;
+  border-bottom: 10px solid #46260e;
+}
+
+.description h1 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.description p {
+  color: #e8bc9c;
+}
