@@ -11,6 +11,10 @@ p {
   font-size: inherit;
 }
 
+img {
+  vertical-align: bottom;
+}
+
 /* Styles */
 
 .animal {
