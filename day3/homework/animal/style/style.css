@@ -1,7 +1,7 @@
 /* Reset */
 
 body {
-  background-image: url("./images/bg.png");
+  background-image: url("../images/bg.png");
 }
 
 h1,
@@ -15,6 +15,17 @@ img {
   vertical-align: bottom;
 }
 
+ul {
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
 /* Styles */
 
 .animal {
@@ -39,4 +50,23 @@ img {
 
 .description p {
   color: #e8bc9c;
+}
+
+.animal_nav {
+  position: absolute;
+  margin: 20px;
+  background-color: white;
+
+  box-shadow: inset 0 0 10px black;
+  border-radius: 6px;
+}
+
+.animal_nav .lists span {
+  font-weight: bold;
+}
+
+li:hover {
+  font-size: 20px;
+  transition: all 0.4s;
+  cursor: pointer;
 }
