@@ -1,28 +1,116 @@
-/* Reset CSS */
+/* Reset */
 
 h1,
+h2 {
+  font-size: initial;
+  font-weight: initial;
+}
+
+h1,
+h2,
 p,
-img {
+img,
+ul {
   margin: 0;
 }
 
+ul {
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  text-align: left;
+}
+
+/* Style */
+
 body {
-  background-color: lavender;
-}
-
-.wrapper {
-  width: 50%;
-  margin: 40px auto;
-  background-color: azure;
-  text-align: center;
-}
-
-.wrapper header {
-  background-color: blueviolet;
-  padding: 40px 0;
+  background-image: url("./images/background_a.png");
+  background-position: center;
+  background-size: cover;
 }
 
 .profile {
+  width: 50%;
+  margin: 40px auto;
+  text-align: center;
+  background-color: #242a2d;
+  color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.profile .header {
+  background-image: url("./images/cover_a.jpg");
+  background-position: center;
+  background-size: cover;
+
+  padding: 40px 0;
+}
+
+.profile_image {
   border-radius: 50%;
   border: 10px solid purple;
+}
+
+.profile .header h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 4px 0 20px 0;
+}
+
+.profile .header p {
+  font-size: 14px;
+  font-weight: bold;
+  border: 2px solid white;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 8px;
+  letter-spacing: 4px;
+}
+
+.section {
+  padding: 20px;
+}
+
+.section {
+  background-repeat: no-repeat;
+  background-position: right 40px center;
+}
+
+.section.information {
+  background-image: url("./images/icon-information.png");
+}
+
+.section.skills {
+  background-image: url("./images/icon-skills.png");
+}
+.section h2 {
+  text-align: left;
+
+  font-size: 20px;
+
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.section li {
+  padding-left: 10px;
+  border-left: 4px solid white;
+  cursor: pointer;
+}
+
+.section li:hover {
+  border-left: 32px solid white;
+  transition: all 0.4s ease-out;
+}
+
+.footer {
+  letter-spacing: 4px;
+  font-size: 14px;
+  padding: 12px;
 }
