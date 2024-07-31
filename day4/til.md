@@ -103,22 +103,24 @@ git restore --staged index.html
 git rm --cached index.html
 ```
 
-**untracked**(commit에 의해 버전이 생성되지 않은 파일) 파일은 rm을 이용해 unstage한다.
+**untracked**(commit으로 버전이 생성되지 않은 파일) 파일은 rm을 이용해 unstage한다.
 
-> stage area에 있는 변경 사항에 working directory의 내용을 다시 추가한 후 commit을 이용해 버전을 완성시켜야 할 때 restore 명령어를 사용한다.
->
+> 이미 stage area에 있는 변경 사항에 내용을 다시 추가하고 싶을 때 restore 명령어를 사용한다.
+
 > **unstage 시 --staged 옵션 주의**  
 > working directory에서 restore된 변경 사항은 복원할 수 없다.
+
+## 2. 브랜치 관련
 
 ```git
 git checkout HEAD~3
 ```
 
-## 2. 브랜치 관련 명령어
+HEAD를 포함해 3번째 커밋으로 이동한다.
 
-main 브랜치에서 HEAD로부터 3개 떨어진 커밋의 id(hash code)로 임시 브랜치를 생성하여 이동하여 내용을 확인한다.
+해당 커밋의 id(hash code)로 임시 브랜치를 생성한다.
 
-HEAD~3 대신 커밋 id를 입력해도 된다.
+HEAD~3 대신 커밋 id를 입력할 수 있다.
 
 ```git
 git switch -c styling
