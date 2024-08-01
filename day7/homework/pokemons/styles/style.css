@@ -1,0 +1,93 @@
+/* Resets */
+body,
+h1,
+p {
+  margin: unset;
+}
+
+h1 {
+  font-size: unset;
+  font-weight: unset;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+/* Layouts */
+.wrapper {
+  width: 300px;
+  margin: 258px auto;
+  text-align: center;
+}
+
+/* Typography */
+:root {
+  font-family: "Arial";
+}
+
+/* Styles */
+body {
+  background-color: #ddd;
+}
+
+.pokemon-cover {
+  position: absolute;
+  top: 58px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pokemon {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.pokemon-contents {
+  padding: 78px 20px 44px 20px;
+  background-color: #fff;
+}
+
+.pokemon-contents h1 {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 41px;
+  margin-bottom: 4px;
+}
+
+.pokemon-contents .divider {
+  width: 77px;
+  height: 4px;
+  margin: 0 auto;
+  margin-bottom: 24px;
+  border-radius: 6px;
+}
+
+.pokemon-contents p {
+  color: #888;
+}
+
+.footer {
+  padding: 15px 0;
+  background-color: #eee;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+.footer .icons img {
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+.footer .icons img:last-child {
+  margin-right: 0px;
+}
+
+/* Pikachu */
+.divider.pikachu {
+  background-color: #f2aa36;
+}
+
+.pikachu {
+  color: #f2aa36;
+}
