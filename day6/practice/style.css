@@ -36,7 +36,7 @@ body {
 }
 
 .header {
-  padding: 46px 0;
+  padding: 44px 0;
   background-color: #ffffff;
   border-bottom: 4px solid #d9d9d9;
 }
@@ -67,14 +67,18 @@ body {
   line-height: 48px;
   font-weight: bold;
   color: #888;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center right 14px;
+  background-size: 20px;
+  transition: all 0.4s;
+  background-image: none;
 }
 
 .list:hover {
   box-shadow: 0 0 0 4px #759cff inset;
+  color: #759cff;
   background-image: url("./image.png");
-  background-repeat: no-repeat;
-  background-position: center right 14px;
-  background-size: 20px;
 }
 
 .list:last-child {
