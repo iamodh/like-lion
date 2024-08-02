@@ -1,8 +1,13 @@
 /* Resets */
 body,
 h1,
-p {
+p,
+ul {
   margin: unset;
+}
+
+ul {
+  padding: unset;
 }
 
 h1 {

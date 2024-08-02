@@ -41,24 +41,24 @@ body {
   border-bottom: 4px solid #d9d9d9;
 }
 
-.header .rectangle {
+.header ::before {
+  content: " ";
   width: 8px;
   height: 32px;
   background-color: #ff007a;
   display: inline-block;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  vertical-align: middle;
+  margin-right: 32px;
+  vertical-align: bottom;
 }
 
 .header h1 {
   color: #ff007a;
   font-size: 24px;
-  padding-left: 31px;
   font-weight: bold;
   line-height: 28px;
   display: inline-block;
-  vertical-align: middle;
 }
 
 .main {
@@ -90,7 +90,7 @@ body {
 }
 
 .item:hover {
-  box-shadow: 0 0 0 4px #759cff inset;
+  box-shadow: 0 0 0 2px #759cff inset;
   color: #759cff;
   background-image: url("./checked.svg");
   margin-left: 11px;
