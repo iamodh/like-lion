@@ -37,21 +37,17 @@ body {
 }
 
 .pokemon-cover {
-  position: absolute;
-  top: 58px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: -400px;
 }
 
 .pokemon {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  overflow: hidden;
 }
 
 .pokemon-contents {
   padding: 78px 20px 44px 20px;
   background-color: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 10px 10px 0 0;
 }
 
 .pokemon-contents h1 {
@@ -76,6 +72,7 @@ body {
 .footer {
   padding: 15px 0;
   background-color: #eee;
+  border-radius: 0 0 10px 10px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
 }
 
