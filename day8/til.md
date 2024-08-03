@@ -49,13 +49,13 @@ margin-left: -50px;
 margin-right: -50px;
 ```
 
-![alt text](image-3.png)
+![alt text](width-auto-with-negative-margin.png)
 
 차지하는 공간(margin)이 좌우 50px 줄어든 상태에서 요소의 박스레벨(padding)을 고려해 부모의 컨테이닝 영역을 채운다.
 
 **transition, box-shadow를 이용하면 더 재밌는 효과를 줄 수 있다.**
 
-![alt text](image-4.png)
+![alt text](width-auto-with-negative-margin-example.png.png)
 
 # 타임라인 디자인
 
@@ -97,9 +97,9 @@ margin-right: -50px;
 
 형제끼리의 마진 병합은 자연스럽지만 부모와 자식 요소 간의 마진 병합은 수정할 필요가 있다.
 
-**body, wrapper, box 세 개의 블럭 요소가 box의 마진만 공유하고 있는 경우**
+**body, wrapper, box 세 개의 블럭 요소가 box의 마진만 공유하고 있는 경우**d
 
-![alt text](image-7.png)
+![alt text](margin-collision.png)
 
 ## 2. 해결 방법
 

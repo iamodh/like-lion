@@ -37,14 +37,11 @@ body {
 }
 
 .pokemon-cover {
-  margin-top: -400px;
-}
-
-.pokemon {
+  margin-top: -200px;
 }
 
 .pokemon-contents {
-  padding: 78px 20px 44px 20px;
+  padding: 18px 20px 44px 20px;
   background-color: #fff;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
   border-radius: 10px 10px 0 0;
@@ -57,11 +54,12 @@ body {
   margin-bottom: 4px;
 }
 
-.pokemon-contents .divider {
+.pokemon-contents h1::after {
+  content: " ";
+  display: block;
   width: 77px;
   height: 4px;
-  margin: 0 auto;
-  margin-bottom: 24px;
+  margin: 4px auto 24px auto;
   border-radius: 6px;
 }
 
@@ -85,8 +83,12 @@ body {
   margin-right: 0px;
 }
 
+.pokemon-contents p span {
+  font-weight: bold;
+}
+
 /* Pikachu */
-.divider.pikachu {
+.pokemon-contents h1.pikachu::after {
   background-color: #f2aa36;
 }
 
