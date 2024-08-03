@@ -1,6 +1,6 @@
 /* Resets */
 body,
-ul,
+ol,
 h1 {
   margin: unset;
 }
@@ -18,30 +18,37 @@ h1 {
   font-weight: unset;
 }
 
-/* Styles */
+/* Typography */
 :root {
   font-family: "Arial";
 }
+
+/* Layouts */
+.l_wrapper {
+  width: 448px;
+  margin: 110px auto;
+}
+
+/* Design */
 
 body {
   background-color: #d9d9d9;
 }
 
-.wrapper {
-  width: 448px;
-  margin: 110px auto;
+.bucketlist {
+  background-color: #eee;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   overflow: hidden;
 }
 
-.header {
+.bucketlist-header {
   padding: 44px 0;
   background-color: #ffffff;
   border-bottom: 4px solid #d9d9d9;
 }
 
-.header ::before {
+.bucketlist-header ::before {
   content: " ";
   width: 8px;
   height: 32px;
@@ -53,7 +60,7 @@ body {
   vertical-align: bottom;
 }
 
-.header h1 {
+.bucketlist-header h1 {
   color: #ff007a;
   font-size: 24px;
   font-weight: bold;
@@ -61,17 +68,11 @@ body {
   display: inline-block;
 }
 
-.main {
-  background-color: #eee;
-}
-
 .lists {
-  padding: 40px 0;
+  padding: 40px 38px 38px 38px;
 }
 
-.item {
-  margin: 0 38px;
-
+.lists li {
   margin-bottom: 14px;
   background-color: #fff;
   box-shadow: 0 0 0 4px #d9d9d9 inset;
@@ -89,14 +90,14 @@ body {
   background-image: url("./uncheked.svg");
 }
 
-.item:hover {
+.lists li:last-child {
+  margin-bottom: 0;
+}
+
+.lists li:hover {
   box-shadow: 0 0 0 2px #759cff inset;
   color: #759cff;
   background-image: url("./checked.svg");
-  margin-left: 11px;
-  margin-right: 11px;
-}
-
-.item:last-child {
-  margin-bottom: 0;
+  margin-left: -20px;
+  margin-right: -20px;
 }
