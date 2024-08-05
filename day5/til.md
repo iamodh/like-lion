@@ -41,7 +41,7 @@ git reflog
 
 ## 2. Rebase
 
-브랜치의 분기 시작점 base를 재설정하여 현재 브랜치를 다른 브랜치 뒤에 붙인다.
+현재 브랜치의 분기 시작점 base를 재설정하여 다른 브랜치 뒤에 이어 붙인다.
 
 base부터 시작하여 커밋 기록들이 새로운 id와 함께 옮겨진다.
 
@@ -51,11 +51,11 @@ base부터 시작하여 커밋 기록들이 새로운 id와 함께 옮겨진다.
 git rebase -i HEAD~2
 ```
 
-HEAD에서 두 번째 커밋에서 **rebase**를 interactive mode로 실행한다.
+- HEAD의 두 번째 이전 커밋에서 **rebase** 작업을 명령어를 사용한 대화형(interactive mode)으로 실행한다.
 
-수정하고 싶은 내용의 커밋 앞에 pick 대신 r로 수정한다.
+- 수정하고 싶은 커밋의 내용의 앞 `pick`을 `r`(reset)로 수정한다.
 
-커밋 에딧 메세지 창에서 내용을 수정한다.
+- 커밋 에딧 메세지 창에서 내용을 수정한다.
 
 두 개 이상의 커밋 내용을 수정해야한다면
 
@@ -65,7 +65,27 @@ git rebase --continue
 
 로 다음 커밋 에딧 메시지 창으로 이동할 수 있다.
 
-rebase editor에서 r옵션을 주면 해당 커밋 내용을 수정한 후 이후의 커밋 기록과 까지 다시 커밋한다. (이전의 커밋들은 대체됨)
+rebase editor에서 r옵션을 주면 해당 커밋 내용을 수정한 후 이후의 커밋 기록까지 다시 커밋한다. (이전의 커밋들은 대체됨)
+
+---
+
+### rebase merge
+
+1. `main`과 `styling`에서 같은 파일에 다른 수정내용을 커밋함
+
+   ![alt text](rebase-merge.png)
+
+2. `styling` 브랜치에서 `git rebase main` 명령어로 병합, merge editor에서 충돌 resolve
+
+   ![alt text](rebase-merge2.png)
+
+   이전 styling 커밋이 id가 변경된 후 main에 rebase된 것을 볼 수 있다.
+
+3. `main`에서 `styling` 병합, `styling` 브랜치 제거
+
+   ![alt text](rebase-merge3.png)
+
+   merge시 나타났던 브랜치 분기가 정리된 채 병합되었다.
 
 ### 두 커밋 합치기
 
