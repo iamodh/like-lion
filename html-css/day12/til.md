@@ -58,11 +58,13 @@ flex box에서의 `width`는 단축속성의 개념이다.
 
 min-width가 초깃값 auto이기 때문에 내부 컨텐츠의 길이(가장 긴 단어의 길이)에 의해 아이템 너비가 결정된다.
 
-> flex-grow: 1 => 가용 공간 가득 채우라. 이제 flex-basis를 곁들인...
+#### 종찬쌤의 정리
 
-> flex-basis: 0 => 내부 콘텐츠 크기 + grow 가 아닌, grow로만 너비가 결정될 수 있도록 함.
+- flex-grow: 1 => 가용 공간 가득 채우라. 이제 flex-basis를 곁들인...
 
-> min-width: 0 => 내부 콘텐츠가 부모의 너비에 영향을 끼치지 않게끔 처리함.
+- flex-basis: 0 => 내부 콘텐츠 크기 + grow 가 아닌, grow로만 너비가 결정될 수 있도록 함.
+
+- min-width: 0 => 내부 콘텐츠가 부모의 너비에 영향을 끼치지 않게끔 처리함.
 
 flex-basis는 flex container 안쪽
 
