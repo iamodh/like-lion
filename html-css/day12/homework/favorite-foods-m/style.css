@@ -2,3 +2,237 @@
  * 한글 폰트 설정
   font-family: "Noto Sans KR", sans-serif;
 */
+
+/* Reset */
+body,
+h1,
+ul,
+h2,
+p {
+  margin: unset;
+}
+
+ul {
+  padding: unset;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2 {
+  font-size: unset;
+  font-weight: unset;
+}
+
+img {
+  vertical-align: top;
+}
+
+/* Typography */
+:root {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* Layouts */
+
+.l_wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.l_row {
+  display: flex;
+  margin: 0 -15px;
+  row-gap: 30px;
+  flex-wrap: wrap;
+}
+
+.l_col {
+  width: calc(100% / 4);
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* Typography */
+:root {
+  font-family: "Arial";
+}
+
+.col-hotdog {
+  color: #ff6600;
+  font-weight: bold;
+}
+
+.col-hotdog li {
+  font-weight: initial;
+  background-color: #ff6600;
+}
+
+.col-burger {
+  color: #17a651;
+  font-weight: bold;
+}
+
+.col-burger li {
+  font-weight: initial;
+  background-color: #17a651;
+}
+
+.col-pizza {
+  color: #0075ff;
+  font-weight: bold;
+}
+
+.col-pizza li {
+  font-weight: initial;
+  background-color: #0075ff;
+}
+
+.col-beer {
+  color: #f8d407;
+  font-weight: bold;
+}
+
+.col-beer li {
+  font-weight: initial;
+  background-color: #f8d407;
+}
+
+/* Components */
+.header {
+  background-color: #f4f4f4;
+}
+
+.contents {
+  padding-top: 30px;
+  background-color: #d9d9d9;
+}
+
+.footer {
+  background-color: #d9d9d9;
+  padding: 30px 0;
+
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  color: #aaaaaa;
+}
+
+.header-inside {
+  display: flex;
+  align-items: center;
+  min-height: 160px;
+}
+
+.header-inside h1 {
+  color: #ff6600;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header-inside .logo {
+  width: 124px;
+  margin-left: auto;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-cover {
+  position: relative;
+}
+
+.card-cover img {
+  width: 100%;
+}
+
+.card-cover h2 {
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 24px;
+  width: fit-content;
+  padding: 10px 20px;
+
+  position: absolute;
+  bottom: 0;
+}
+
+.card-description {
+  padding: 20px;
+  color: #666666;
+  font-size: 14px;
+}
+
+.card-tags {
+  padding: 26px 18px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  background-color: #f4f4f4;
+}
+
+.card-tags li {
+  color: #ffffff;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 48px;
+}
+
+@media (min-width: 800px) {
+  .card-cover h2 {
+    font-size: initial;
+  }
+
+  .card-description {
+    padding: 10px;
+  }
+
+  .card-tags {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  .l_col {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .l_row {
+    flex-direction: column;
+  }
+
+  .l_col {
+    width: 100%;
+  }
+
+  .header-inside {
+    min-height: 224px;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  .header-inside .logo {
+    margin: 0 auto;
+  }
+
+  .footer {
+    text-align: center;
+    padding-bottom: 62px;
+  }
+
+  .card-description {
+    font-size: 18px;
+  }
+
+  .card-tags li {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
