@@ -12,7 +12,6 @@ img {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  box-shadow: inset 0 0 4px red;
 }
 /* Typography */
 :root {
@@ -27,18 +26,15 @@ body {
   background-color: #333;
 }
 .header-inside {
-  box-shadow: inset 0 0 20px blue;
   display: flex;
   align-items: center;
   height: 180px;
   gap: 30px;
 }
 .logo {
-  box-shadow: inset 0 0 20px red;
   width: 200px;
 }
 .description {
-  box-shadow: inset 0 0 20px red;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -51,7 +47,6 @@ body {
 }
 .anger {
   width: 140px;
-  box-shadow: inset 0 0 20px red;
   margin-left: auto;
   margin-top: auto;
 }
@@ -68,11 +63,12 @@ body {
 .container-main {
   box-shadow: inset 0 0 30px dodgerblue;
   flex-grow: 1;
+  flex-basis: 0;
   min-width: 0;
 }
 
 .container-sidebar {
   box-shadow: inset 0 0 30px orangered;
   width: 168px;
-  flex-shrink: 0;
+  height: 340px;
 }

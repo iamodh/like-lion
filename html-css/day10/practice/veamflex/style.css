@@ -34,6 +34,18 @@ h4 {
   padding: 0 20px;
 }
 
+.l_row {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: yellow;
+}
+
+.l_col {
+  width: 200px;
+  background-color: dodgerblue;
+  color: black;
+}
+
 /* Typography */
 :root {
   font-family: arial;
@@ -94,13 +106,13 @@ body {
   min-width: 0;
 }
 
-.card {
+/* .card {
   flex-grow: 1;
   flex-basis: 320px;
   background-color: #222;
   border-radius: 16px;
   overflow: hidden;
-}
+} */
 
 .card-cover {
   width: 100%;
