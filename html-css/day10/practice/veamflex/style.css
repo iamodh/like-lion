@@ -37,13 +37,22 @@ h4 {
 .l_row {
   display: flex;
   flex-wrap: wrap;
-  background-color: yellow;
+  row-gap: 24px;
+  margin: 0 -12px;
 }
 
 .l_col {
-  width: 200px;
-  background-color: dodgerblue;
-  color: black;
+  width: calc(100% / 3);
+  padding: 0 12px;
+  /* width가 padding을 포함하여 계산 */
+  box-sizing: border-box;
+}
+
+.l_col_6_12 {
+  width: 50%;
+}
+.l_col_3_12 {
+  width: 25%;
 }
 
 /* Typography */
@@ -90,29 +99,26 @@ body {
 
 .contents {
   background-color: #000;
+  padding: 24px 0;
 }
 
 .container {
-  box-shadow: inset 0 0 30px gold;
   display: flex;
   gap: 24px;
   min-height: 848px;
 }
 
 .container-main {
-  box-shadow: inset 0 0 20px purple;
   flex-grow: 1;
   flex-basis: 0;
   min-width: 0;
 }
 
-/* .card {
-  flex-grow: 1;
-  flex-basis: 320px;
+.card {
   background-color: #222;
   border-radius: 16px;
   overflow: hidden;
-} */
+}
 
 .card-cover {
   width: 100%;
@@ -145,12 +151,11 @@ body {
 }
 
 .container-sidebar {
-  box-shadow: inset 0 0 20px pink;
   width: 168px;
   height: 283px;
 }
 
-.movies-sidebar .category {
+.container-sidebar .category {
   display: flex;
   align-items: flex-start;
   min-height: 24px;
@@ -158,17 +163,17 @@ body {
   gap: 9px;
 }
 
-.movies-sidebar .category img {
+.container-sidebar .category img {
   width: 16px;
 }
 
-.movies-sidebar .genre {
+.container-sidebar .genre {
   min-height: 126px;
   padding-top: 8px;
   padding-left: 10px;
 }
 
-.movies-sidebar .genre h4 {
+.container-sidebar .genre h4 {
   font-size: 14px;
   color: #fa8073;
   border-top: 1px solid;
@@ -176,7 +181,7 @@ body {
   margin-bottom: 15px;
 }
 
-.movies-sidebar .genre ul li {
+.container-sidebar .genre ul li {
   font-size: 12px;
   margin-top: 6px;
   padding-bottom: 5px;
@@ -184,7 +189,7 @@ body {
   cursor: pointer;
 }
 
-.movies-sidebar .genre ul li:last-child {
+.container-sidebar .genre ul li:last-child {
   border-bottom: none;
 }
 
