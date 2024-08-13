@@ -21,7 +21,8 @@ li {
 }
 
 h1,
-h2 {
+h2,
+strong {
   font-size: unset;
   font-weight: unset;
 }
@@ -61,44 +62,17 @@ img {
   font-family: "Arial";
 }
 
-.col-hotdog {
-  color: #ff6600;
-  font-weight: bold;
+/* Variables */
+:root {
+  --point-color: #f60;
 }
 
-.col-hotdog li {
-  font-weight: initial;
-  background-color: #ff6600;
+.card.green {
+  --point-color: #17a651;
 }
 
-.col-burger {
-  color: #17a651;
-  font-weight: bold;
-}
-
-.col-burger li {
-  font-weight: initial;
-  background-color: #17a651;
-}
-
-.col-pizza {
-  color: #0075ff;
-  font-weight: bold;
-}
-
-.col-pizza li {
-  font-weight: initial;
-  background-color: #0075ff;
-}
-
-.col-beer {
-  color: #f8d407;
-  font-weight: bold;
-}
-
-.col-beer li {
-  font-weight: initial;
-  background-color: #f8d407;
+.card.blue {
+  --point-color: #0075ff;
 }
 
 /* Components */
@@ -155,6 +129,7 @@ img {
 }
 
 .card-cover h2 {
+  color: var(--point-color);
   background-color: rgba(0, 0, 0, 0.8);
   font-size: 24px;
   width: fit-content;
@@ -172,6 +147,11 @@ img {
   height: calc(1.4em * 5);
   margin: 20px;
   overflow: hidden;
+}
+
+.card-description strong {
+  font-weight: 600;
+  color: var(--point-color);
 }
 
 .card-tags {
@@ -193,6 +173,7 @@ img {
   border-radius: 48px;
   max-width: 100%;
   min-width: fit-content;
+  background-color: var(--point-color);
 }
 
 @media (min-width: 800px) {
