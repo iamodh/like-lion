@@ -141,6 +141,9 @@ img {
   background-color: #fff;
   border-radius: 12px;
   overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-cover {
@@ -162,17 +165,25 @@ img {
 }
 
 .card-description {
-  padding: 20px;
   color: #666666;
   font-size: 14px;
+  padding: unset;
+  line-height: 1.4;
+  height: calc(1.4em * 5);
+  margin: 20px;
+  overflow: hidden;
 }
 
 .card-tags {
   padding: 26px 18px;
   display: flex;
   gap: 6px;
-  flex-wrap: wrap;
   background-color: #f4f4f4;
+
+  box-shadow: inset 0 0 20px orange;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  align-items: center;
 }
 
 .card-tags li {
@@ -181,15 +192,13 @@ img {
   font-size: 12px;
   cursor: pointer;
   border-radius: 48px;
+  max-width: 100%;
+  min-width: fit-content;
 }
 
 @media (min-width: 800px) {
   .card-cover h2 {
     font-size: initial;
-  }
-
-  .card-description {
-    padding: 10px;
   }
 
   .card-tags {

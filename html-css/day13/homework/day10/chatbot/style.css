@@ -1,0 +1,105 @@
+/* Typography */
+:root {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* Reset */
+body,
+ul,
+p,
+h3 {
+  margin: unset;
+}
+
+ul {
+  padding: unset;
+}
+
+li {
+  list-style: none;
+}
+
+h3 {
+  font-size: unset;
+  font-weight: unset;
+}
+
+/* Variables */
+:root {
+  --point-color: blueviolet;
+}
+
+/* Components */
+
+body {
+  background-color: #eee;
+}
+
+.chatting-room {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.chat {
+  display: flex;
+  gap: 30px;
+}
+
+.profile {
+  border-radius: 50%;
+  border: 10px solid white;
+  align-self: center;
+}
+
+.chat.me .message::before {
+  content: "";
+  display: inline-block;
+  align-self: center;
+  position: relative;
+
+  /* left arrow */
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid #fff;
+}
+
+.message {
+  display: flex;
+}
+
+.contents {
+  background-color: #fff;
+  padding: 20px 30px;
+  line-height: 1.8;
+  font-weight: bold;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+.contents h3 {
+  font-size: 20px;
+  color: var(--point-color);
+}
+
+.contents p {
+  color: #777;
+}
+
+.chat.opponent {
+  --point-color: springgreen;
+  flex-direction: row-reverse;
+}
+
+.chat.opponent .message::after {
+  content: "";
+  display: inline-block;
+  align-self: center;
+  position: relative;
+
+  /* left arrow */
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #fff;
+}
