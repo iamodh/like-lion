@@ -31,7 +31,7 @@
 
 ### 안정적인 레이아웃을 위한 flex 속성
 
-![alt text](image-1.png)
+![image-1](https://github.com/user-attachments/assets/4102e8f6-96a8-47f9-8adf-7f3d75f94a3f)
 
 - `img` 요소에 `flex-shrink`: 0
 - `align-items: flex-start`
@@ -64,7 +64,7 @@ flex item의 높이가 `stretch`되기 때문에 컨텐츠와 높이 차이가 �
 }
 ```
 
-![alt text](<스크린샷 2024-08-12 113312.png>)
+![스크린샷 2024-08-12 113312](https://github.com/user-attachments/assets/f388ca11-eeb3-45bf-b385-ff329a015210)
 
 # CSS 변수
 

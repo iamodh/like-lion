@@ -19,9 +19,9 @@
 }
 ```
 
-![alt text](image.png)
+![스크린샷 2024-08-05 153051](https://github.com/user-attachments/assets/5b6a2c92-62a0-4056-9096-c79f6831ef38)
 
-![alt text](image-1.png)
+![스크린샷 2024-08-05 153534](https://github.com/user-attachments/assets/82200a32-7a66-493b-9248-56032010911e)
 
 이를 통해 다음의 효과를 얻을 수 있다.
 
@@ -33,7 +33,7 @@
 
 ### 결과
 
-![alt text](image-3.png)
+![스크린샷 2024-08-05 160630](https://github.com/user-attachments/assets/30f61d7b-1041-424c-b14d-368b610a3271)
 
 > 최외곽 덩어리 > 공통 wrapper > 하위 wrapper > 컴포넌트 순으로 레이아웃 설계를 할 수 있다.
 
@@ -47,7 +47,7 @@
 
 이미지는 크게 `img` 태그를 이용한 마크업과 `background` 관련 CSS 속성을 이용해 통해 스타일링 하는 두 가지 방법으로 배치할 수 있다.
 
-![alt text](image-4.png)
+![스크린샷 2024-08-05 162053](https://github.com/user-attachments/assets/a8a12697-f199-458e-b7c0-b9c2d839755c)
 
 보통 이미지가 컨텐츠와 관련이 없을 경우 CSS를 사용하지만, 위의 경우에는 컨텐츠와 이미지가 가로로 배치되어있으므로 마크업을 사용한다. (후에 `display: flex`로 정렬한다.)
 

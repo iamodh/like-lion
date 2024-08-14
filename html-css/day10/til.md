@@ -8,7 +8,7 @@
 
 이 때 마지막 **flexitem**에게 **margin-left: auto**를 주면 해당 개구리가 가용공간을 왼쪽 마진으로 계산하여 사용한다.
 
-![alt text](image.png)
+![스크린샷 2024-08-06 093357](https://github.com/user-attachments/assets/9609c382-9832-470f-ba44-55c6b6708acf)
 
 > 모든 flexitem들이 같은 가용공간을 **공유**하고있음이 중요하다. (따라서 가운데 개구리에게 margin: 0 auto를 주면 space-between과 같은 상태가 된다.)
 
@@ -16,7 +16,7 @@
 
 만약 flexitem들이 flexbox를 초과하면 overflow된다.
 
-![alt text](image-1.png)
+![스크린샷 2024-08-06 094907](https://github.com/user-attachments/assets/107fb9f0-91f5-4e0f-b6e4-f3ce840cafc3)
 
 이 때 flexbox에 justify-content: flex-end를 ain axis를 기준으로 왼쪽 끝으로 정렬이 바뀌게 된다. (justify-content의 초기값은 flex-start)
 
@@ -28,11 +28,11 @@
 
 flexbox는 `align-items`에 normal(stretch)의 초기값을 가지고 있다. 부모의 높이가 늘어나면 flexitem들도 같이 늘어난다.
 
-![alt text](image-2.png)
+![스크린샷 2024-08-06 101502](https://github.com/user-attachments/assets/3c87a639-a5e7-4eb6-bf00-f56f230e9b22)
 
 세로에도 가용공간이 있으므로 `margin`을 이용해 flexitem 위치도 함께 이동시킬 수 있다.
 
-![alt text](image-4.png)
+![스크린샷 2024-08-06 101729](https://github.com/user-attachments/assets/d4f984b1-7461-49d2-ad50-0814462c2a7c)
 
 `align-items: flex-start` 후 마지막 개구리에게 `margin-top: auto`
 
@@ -97,7 +97,7 @@ flexitem의 속성이며 초기값이 0이다.
 
 > `flex-basis`가 0 또는 고정된 px값이면 `flex-grow`의 비율만큼 flexitem의 크기가 결정된다.
 
-![alt text](image-5.png)
+![image-5](https://github.com/user-attachments/assets/f3164d44-7519-4ed6-a519-ce0add498107)
 
 ## 3. flex-shrink
 
@@ -109,19 +109,19 @@ flexitem의 속성이며 초기값이 0이다.
 
 - 가용공간이 flexitem들의 basis 합보다 작을 때
 
-  ![alt text](image-6.png)
+  ![image-6](https://github.com/user-attachments/assets/f64c62ed-69b9-4002-a6e6-d315857e1912)
 
   모든 flexitem들의 basis가 줄어든 후 새로운 flexitem이 overflow 된다.
 
 - 마지막 flexitem에 flex-shrink: 0을 주었을 때
 
-  ![alt text](image-7.png)
+  ![image-7](https://github.com/user-attachments/assets/3a41d46a-7fbb-41d9-ad06-9146e83ef5c5)
 
   해당 flexitem의 basis가 줄어들지 않는다.
 
 - 첫째 flexitem에 1보다 큰 flex-shrink값을 주었을 때
 
-  ![alt text](image-8.png)
+  ![image-8](https://github.com/user-attachments/assets/2d2b334d-f274-4786-9219-1db7ad4f0afc)
 
   해당 flexitem이 가장 큰 비율로 basis가 줄어든다.
 
@@ -138,4 +138,4 @@ flexitem의 속성이며 초기값이 0이다.
 
 5. 가변 높이 설정을 위해 컨테이너에 `align-items: flex-start`를 준다.
 
-![alt text](image-10.png)
+![image-10](https://github.com/user-attachments/assets/fa22a3af-0e92-4493-afb0-71223fe3dab9)

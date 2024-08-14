@@ -113,7 +113,7 @@ span {
 
 만약 요소에 내용이 없는 경우(img) 해당 요소의 bottom이 다른 요소의 baseline에 맞춰 표시된다.
 
-![alt text](image.png)
+![스크린샷 2024-07-31 144831](https://github.com/user-attachments/assets/8dbcbca3-4597-46e3-bbdd-e026f4576a93)
 
 ## 6. lign height
 
@@ -125,7 +125,7 @@ span {
 
 > 폰트사이즈 위 아래로 **half-leading area**가 붙어 `line-height`를 형성한다.
 
-![alt text](image-1.png)
+> ![스크린샷 2024-07-31 153022](https://github.com/user-attachments/assets/be602a82-2462-4116-92ad-d48a63154792)
 
 # CSS
 

@@ -73,17 +73,17 @@ rebase editor에서 r옵션을 주면 해당 커밋 내용을 수정한 후 이�
 
 1. `main`과 `styling`에서 같은 파일에 다른 수정내용을 커밋함
 
-   ![alt text](rebase-merge.png)
+   ![스크린샷 2024-08-04 184615](https://github.com/user-attachments/assets/cef73c9f-4552-462a-a7ae-15502fc6ab15)
 
 2. `styling` 브랜치에서 `git rebase main` 명령어로 병합, merge editor에서 충돌 resolve
 
-   ![alt text](rebase-merge2.png)
+   ![스크린샷 2024-08-04 185504](https://github.com/user-attachments/assets/4be81779-45b5-4d8f-ac33-02f195c63527)
 
    이전 styling 커밋이 id가 변경된 후 main에 rebase된 것을 볼 수 있다.
 
 3. `main`에서 `styling` 병합, `styling` 브랜치 제거
 
-   ![alt text](rebase-merge3.png)
+   ![스크린샷 2024-08-04 185904](https://github.com/user-attachments/assets/6bfc98bd-616a-4634-9249-105b1dee43fb)
 
    merge시 나타났던 브랜치 분기가 정리된 채 병합되었다.
 

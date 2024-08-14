@@ -16,7 +16,7 @@ flex box에서의 `width`는 단축속성의 개념이다.
 
 나머지 item들의 `width`가 줄어든다.
 
-![alt text](image.png)
+![image](https://github.com/user-attachments/assets/f7d714c3-6e36-4394-8802-93bad5491adf)
 
 `flex-basis`와 마찬가지로 `min-width`도 width가 줄어듦에 따라 같이 **재계산**되어 줄어들기 때문이다.
 
@@ -30,13 +30,13 @@ flex box에서의 `width`는 단축속성의 개념이다.
 
 기본적으로 `flex-basis: auto`에 의해서 컨텐츠의 양이 많은 아이템의 너비가 더 큰 비중을 차지하게 된다. (수조 안에 물이 든 봉지 두개를 생각하면 된다.)
 
-![alt text](image-1.png)
+![image-1](https://github.com/user-attachments/assets/a952ebe2-8b0d-4698-be09-48f56dfebb7c)
 
 따라서 컨텐츠부터 넣고 시작했다면 컨텐츠 길이에 따라 변하는 불완전한 레이아웃이 된다.
 
 > 레이아웃부터 잡아야 한다.
 
-![alt text](image-2.png)
+![image-2](https://github.com/user-attachments/assets/cc042f5f-e2ba-4d24-a514-b2fdebd32eb0)
 
 왼쪽 아이템이 `width: 180px`인 사이드바라고 할 때, 오른쪽 아이템의 컨텐츠 길이에 의해 영향을 받지 않게 하는 방법
 
@@ -54,7 +54,7 @@ flex box에서의 `width`는 단축속성의 개념이다.
 
 ### 아이템 너비 고정
 
-![alt text](image-3.png)
+![image-3](https://github.com/user-attachments/assets/02af87a6-a7e4-41cf-83a8-14d825f52f48)
 
 min-width가 초깃값 auto이기 때문에 내부 컨텐츠의 길이(가장 긴 단어의 길이)에 의해 아이템 너비가 결정된다.
 
@@ -157,7 +157,7 @@ min-width는 바깥쪽 침범을 막는다
 
 > 호버 효과를 주었을 때 새로운 이미지를 로드할 필요 없이 background-position-y만 움직여 빠른 효과를 준다.
 
-![alt text](image-6.png)
+![image-6](https://github.com/user-attachments/assets/71269531-682b-4a86-8498-19cf4a435557)
 
 ## 2. 메인
 
@@ -198,7 +198,7 @@ min-width는 바깥쪽 침범을 막는다
 
 아이템을 클래스 선택자로 선택하여 width: calc (100% / 2)등을 주어 특정 row의 단 개수를 늘일 수 있다.
 
-![alt text](image-7.png)
+![image-7](https://github.com/user-attachments/assets/fa73b150-d2ab-472f-b8bf-17fdbcf2ecd4)
 
 ### 12 컬럼 그리드
 
@@ -265,4 +265,4 @@ inline 요소인 버튼을 이용한다.
 
 ## 참고
 
-![alt text](image-5.png)
+![image-5](https://github.com/user-attachments/assets/98edc6ad-a21f-406e-83d6-9305bdff9124)

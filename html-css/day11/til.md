@@ -10,7 +10,7 @@
 
 ## 2. 도형 그리기
 
-![alt text](image.png)
+![스크린샷 2024-08-07 113900](https://github.com/user-attachments/assets/4900369f-5349-4361-a431-ba8a20174baf)
 
 이미지를 레이어에 붙여넣은 후 투명도를 낮추어 가이드를 만든다.
 

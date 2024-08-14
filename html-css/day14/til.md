@@ -12,7 +12,7 @@
 }
 ```
 
-![alt text](image.png)
+![image](https://github.com/user-attachments/assets/4bf9f255-6584-4e5e-b729-b20944bf1d7d)
 
 width: fit-content를 제거하고 뒤의 오버플로우에 말줄임표를 적용해 보자.
 
@@ -28,7 +28,7 @@ width: fit-content를 제거하고 뒤의 오버플로우에 말줄임표를 적
 }
 ```
 
-![alt text](image-1.png)
+![image-1](https://github.com/user-attachments/assets/705543df-c938-47a6-899c-99a8c327a5b1)
 
 텍스트 길이가 짧은 경우에도 `width:auto`의 영향을 받지 않도록 `max-width:fit-content` 처리를 해주었다.
 
@@ -63,7 +63,7 @@ width: fit-content를 제거하고 뒤의 오버플로우에 말줄임표를 적
 
 현재 폰트사이즈와 동기화되어 값이 계산된다.
 
-![alt text](image-2.png)
+![image-2](https://github.com/user-attachments/assets/903f6447-900f-4a2a-bd07-585d5684d1da)
 
 왼쪽 가상 요소의 너비와 높이를 `em`으로 지정하면 글자 크기에 따라 줄어든다.
 
@@ -71,7 +71,7 @@ width: fit-content를 제거하고 뒤의 오버플로우에 말줄임표를 적
 
 하지만 부모의 `line-height`에 `1em`을 주면 값이 계산이 된 후 상속되기 때문에 아래와 같이 모든 하위 요소에 부모의 `font-size`가 적용된다.
 
-![alt text](image-3.png)
+![image-3](https://github.com/user-attachments/assets/8196a47f-c167-4dfb-a3e8-95ee86b6af6e)
 
 ## 3. 태그
 
@@ -87,7 +87,7 @@ width: fit-content를 제거하고 뒤의 오버플로우에 말줄임표를 적
 
 로딩 속도 등의 이유로 예기치 못한 레이아웃 위치의 변동이 발생하는 문제
 
-![alt text](image-6.png)
+![image-6](https://github.com/user-attachments/assets/82722505-b669-4ac2-b19f-d999087cc757)
 
 https://web.dev/static/articles/cls/video/web-dev-assets/layout-instability-api/layout-instability2.webm?hl=ko
 

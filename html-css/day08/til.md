@@ -12,7 +12,7 @@
 
 **margin-top: -50px**
 
-![alt text](negative-margin-top.png)
+![스크린샷 2024-08-02 092731](https://github.com/user-attachments/assets/c2e77b2d-b475-4cbb-b5a9-023b462a2310)
 
 보여지는 영역은 그대로이고, 차지하는 공간 중 윗 부분이 -50px 줄어들었다.
 
@@ -20,13 +20,13 @@
 
 **margin-top: -200px**
 
-![alt text](image.png)
+![스크린샷 2024-08-02 093357](https://github.com/user-attachments/assets/845c3bc7-27cf-4d57-8bcb-29bb204fcec7)
 
 차지하고 있는 공간이 줄어듦에 따라 상위 요소 (컨테이너)의 높이도 함께 줄어든 것을 확인할 수 있다.
 
 **네거티브 마진의 활용**
 
-![alt text](negative-margin-example.png)
+![스크린샷 2024-08-02 094521](https://github.com/user-attachments/assets/52a66f9f-542c-40d9-b83b-50410f596abc)
 
 ## 2. width: auto와 width: 100%의 차이
 
@@ -49,13 +49,13 @@ margin-left: -50px;
 margin-right: -50px;
 ```
 
-![alt text](width-auto-with-negative-margin.png)
+![스크린샷 2024-08-02 101728](https://github.com/user-attachments/assets/056d48e7-9f69-4f6b-a974-20a638001bce)
 
 차지하는 공간(margin)이 좌우 50px 줄어든 상태에서 요소의 박스레벨(padding)을 고려해 부모의 컨테이닝 영역을 채운다.
 
 **transition, box-shadow를 이용하면 더 재밌는 효과를 줄 수 있다.**
 
-![alt text](width-auto-with-negative-margin-example.png.png)
+![스크린샷 2024-08-02 102130](https://github.com/user-attachments/assets/d978f0a8-c9fa-4b78-8644-2026faa50dd3)
 
 # 타임라인 디자인
 
@@ -99,7 +99,7 @@ margin-right: -50px;
 
 **body, wrapper, box 세 개의 블럭 요소가 box의 마진만 공유하고 있는 경우**d
 
-![alt text](margin-collision.png)
+![스크린샷 2024-08-02 144955](https://github.com/user-attachments/assets/3a9f30fa-3f50-4d38-b2d8-a1c4dfd9eec3)
 
 ## 2. 해결 방법
 

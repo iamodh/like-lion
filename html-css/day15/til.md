@@ -53,7 +53,9 @@ h2::after {
 }
 ```
 
-![alt text](image-5.png)
+![image-5](https://github.com/user-attachments/assets/a7794877-ddf3-4fec-af4c-c5654121e862)
+
+또한 가상요소를 absolute 처리 후 inset: 0으로 컨테이닝 블록을 가용공간으로 만들고, 너비를 준 후 가운데 정렬하여 선을 만들었다.
 
 # z-index
 
@@ -73,7 +75,7 @@ z-index의 기준점이 되는 공간이다.
 
 스태킹 컨텍스트를 만드는 다양한 방법이 있지만 `z-index: 0`을 주는 것이 가장 의도가 분명하다.
 
-![alt text](image-9.png)
+![image-9](https://github.com/user-attachments/assets/efb1b2bd-2f72-4e06-9815-81ddbe71854e)
 
 위 경우 `z-index: 1`이 `z-index:9999`를 가지고 있는 요소보다 앞에 나온다.
 
@@ -102,7 +104,7 @@ z-index의 기준점이 되는 공간이다.
 }
 ```
 
-![alt text](image-8.png)
+![image-8](https://github.com/user-attachments/assets/46aeeea6-09c9-476e-8e5a-db07cf07b444)
 
 - `aspect-ratio`로 이미지가 들어갈 공간을 지정해 놓는다.
 
