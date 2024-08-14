@@ -53,21 +53,35 @@ body {
   align-self: center;
 }
 
-.chat.me .message::before {
+.message::before {
   content: "";
-  display: inline-block;
-  align-self: center;
-  position: relative;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin-left: -2em;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 0;
+  height: 0;
 
-  /* left arrow */
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 20px solid #fff;
+  border-width: 1em;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
+}
+
+.chat.opponent .message::before {
+  left: auto;
+  right: 0;
+  margin-left: 0;
+  margin-right: -2em;
+  border-color: transparent transparent transparent white;
 }
 
 .message {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .contents {
@@ -91,18 +105,6 @@ body {
 .chat.opponent {
   --point-color: springgreen;
   flex-direction: row-reverse;
-}
-
-.chat.opponent .message::after {
-  content: "";
-  display: inline-block;
-  align-self: center;
-  position: relative;
-
-  /* left arrow */
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-left: 20px solid #fff;
 }
 
 .footer {
