@@ -32,11 +32,11 @@ h3 {
 /* Components */
 
 body {
+  padding: 30px;
   background-color: #eee;
 }
 
 .chatting-room {
-  padding: 30px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -67,6 +67,7 @@ body {
 
 .message {
   display: flex;
+  align-items: center;
 }
 
 .contents {
@@ -102,4 +103,22 @@ body {
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
   border-left: 20px solid #fff;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 30px;
+  color: #aaa;
+
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+.footer::before,
+.footer::after {
+  content: " ";
+  flex-grow: 1;
+  height: 1px;
+  background-color: currentColor;
 }

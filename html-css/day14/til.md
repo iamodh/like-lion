@@ -106,21 +106,3 @@ https://web.dev/static/articles/cls/video/web-dev-assets/layout-instability-api/
   /* word-wrap */
 }
 ```
-
-# Position
-
-### position: absolute
-
-가장 가까운 `position: static`이 아닌 상위 요소를 기준으로 `left`, `right`, `top`, `bottom` 값에 의해 배치된다.
-
-`position: static`의 상위 요소가 없는 경우 현재 뷰포트(전체 화면)를 기준으로 한다. (스크롤시 따라 이동하지는 않음)
-
-컨테이닝 블록의 기준을 변경하는 방식으로 동작한다.
-
-![alt text](image-7.png)
-
-`position: absolute`인 `img` 요소 `position: relative`인 아버지 요소의 컨테이닝 블록을 사용하기 때문에,
-
-`img` 요소에 `width: 100%`를 줬을 때 그림과 같이 채워진다.
-
-> absolute가 적용된 요소는 원래 공간은 유지한 채 시각적인 부분만 변경된다. (네거티브 마진과 반대)
