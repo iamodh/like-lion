@@ -1,0 +1,180 @@
+/* Reset */
+body,
+h1,
+h3,
+ul,
+p {
+  margin: unset;
+}
+
+h1,
+h3 {
+  font-size: unset;
+  font-weight: unset;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+ul {
+  padding: unset;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: unset;
+  text-decoration: unset;
+}
+
+/* Typography */
+:root {
+  font-family: "Arial";
+}
+
+.container-main {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* Layouts */
+.l_wrapper {
+  padding: 0 60px;
+}
+
+/* Components */
+
+.cover {
+  aspect-ratio: 12 / 7;
+  position: relative;
+
+  display: flex;
+  align-items: flex-end;
+
+  background: linear-gradient(0deg, #111 0%, rgba(17, 17, 17, 0) 81.45%);
+
+  padding: 0 60px;
+}
+
+.cover img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cover-title {
+  font-size: 64px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.cover-title.new::before {
+  content: "NEW";
+  display: block;
+  background-color: #ff2e00;
+  width: fit-content;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.contents {
+  padding-top: 30px;
+  padding-bottom: 60px;
+  background-color: #111;
+  color: #999;
+}
+
+.container {
+  display: flex;
+  gap: 8vw;
+}
+
+.container-main {
+  flex-basis: 0;
+  min-width: 0;
+  flex-grow: 1;
+}
+
+.container-sidebar {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.container-sidebar h3 {
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.genre li {
+  color: #aaa;
+  background-color: #222;
+  border-radius: 12px;
+  padding: 0 14px;
+  height: 22px;
+  line-height: 22px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.genre ul {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 4px;
+  row-gap: 6px;
+}
+
+.ratings ul {
+  display: flex;
+}
+
+.ratings ul li {
+  width: 48px;
+  height: 48px;
+  background-image: url("./images/star.png");
+  /* 이상하게 500%해야 사이즈가 맞네요... */
+  background-size: 500%;
+  background-repeat: no-repeat;
+}
+
+.ratings ul li.filled {
+  background-position-y: -48px;
+}
+
+.castings ul {
+  display: flex;
+}
+
+.castings ul li {
+  margin-left: -20px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 4px solid black;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.castings ul li:first-child {
+  margin: unset;
+}
+
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .container-sidebar {
+    width: auto;
+  }
+}
