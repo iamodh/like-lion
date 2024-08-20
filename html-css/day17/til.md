@@ -207,7 +207,7 @@ data 사용자 속성을 사용해과 속성 셀렉터를 사용해 정보를 �
 
 # 그리드
 
-## 1. 기본 세팅
+## 1. 초기값
 
 ```css
 .container {
@@ -223,17 +223,17 @@ data 사용자 속성을 사용해과 속성 셀렉터를 사용해 정보를 �
 
 gird 컨테이너 안에 두 아이템을 넣었을 때
 
-![alt text](image-13.png)
+![image-13](https://github.com/user-attachments/assets/2d02d370-a563-45d1-b424-d560f17d9ad3)
 
 grid-template-column 속성에 auto auto 값을 주면 한 줄(column)에 두 아이템이 들어간다.
 
-![alt text](image-14.png)
+![image-14](https://github.com/user-attachments/assets/a61c68fb-d61e-48b1-ad60-fa494999640b)
 
-auto는 flex-grow와 비슷하게 동작한다. (내부 너비에 가용 공간을 등분하여 더해준다.)
+auto는 flex-grow와 비슷하게 동작한다. (내부 너비에 컨테이너의 가용 공간을 등분하여 더해준다.)
 
 또한 컨텐츠 양이 많아지면 나머지 요소의 너비가 자동으로 줄어든다.
 
-![alt text](image-15.png)
+![image-15](https://github.com/user-attachments/assets/5f6359e4-edb1-4de9-a431-60f53d7fe46e)
 
 grid-template-column의 값
 
@@ -246,7 +246,7 @@ ustify-items와 align-items의 초기값 normal(stretch)에 의해 컨테이너�
 
 > grid-auto 속성은 grid-template으로 템플릿이 작성되지 않았을 떄 자동으로 지정할 너비, 높이를 나타낸다.
 
-![alt text](image-16.png)
+![image-16](https://github.com/user-attachments/assets/1d7795c5-d754-4f5b-95e1-11bb250d72c9)
 
 > grid-template로 템플릿을 만드는 것은 컨테이닝 블록을 나눈다는 의미이다.
 
@@ -262,7 +262,7 @@ ustify-items와 align-items의 초기값 normal(stretch)에 의해 컨테이너�
 }
 ```
 
-![alt text](image-17.png)
+![image-17](https://github.com/user-attachments/assets/985a291a-b6d4-4086-a88e-65e0154bc21a)
 
 margin: auto
-![alt text](image-18.png)
+![image-18](https://github.com/user-attachments/assets/172afe22-f449-4774-8802-c23b14e9c16e)
