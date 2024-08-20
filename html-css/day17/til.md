@@ -68,7 +68,7 @@
 
 이렇게 하면 사용자가 기준값 조절을 통해 `rem`이 적용되어 있는 요소(핵심 요소)의 폰트 사이즈를 바꿀 수 있다.
 
-![alt text](image-3.png)
+![스크린샷 2024-08-19 104650](https://github.com/user-attachments/assets/943a01d4-4f22-4908-957f-315525ad2f4a)
 
 ## 4. 사이드 바 마크업
 
@@ -76,29 +76,35 @@
 
 > genre, section-title 같은 클래스 네이밍은 좋지 못하다.
 
-![alt text](image-5.png)
+![image-5](https://github.com/user-attachments/assets/5bc29730-b603-429e-a1f5-91b1e109dd2d)
 
-![alt text](image-6.png)
+![image-6](https://github.com/user-attachments/assets/edc26474-2e51-4f2f-99b8-968d4a5479a5)
 
 ## 5. 레이팅 구현
 
-![alt text](image-7.png)
+![image-7](https://github.com/user-attachments/assets/2b3bfda2-e353-47a0-acb2-49d1ea0ec4ea)
 
 height를 background-size의 절반만 나오게 하여 빈 별, 가득 찬 별을 보여준다.
 
-![alt text](image-8.png)
+![image-8](https://github.com/user-attachments/assets/4f20121a-84dc-4677-8c93-ef09f7a72fb2)
 
 컨텐츠는 overflow:hidden으로 숨겨 검색엔진만 볼 수 있도록 한다.
 
 사용자 속성과 속성 셀렉터 방식
 
-![alt text](image-10.png)
+![image-10](https://github.com/user-attachments/assets/6d85689e-e04d-48c4-bb10-19e4851f9639)
 
-![alt text](image-9.png)
+![image-9](https://github.com/user-attachments/assets/d8ae0dc0-c266-40d8-a012-f9c77018ef77)
 
 ## 6. 사용자 프로필
 
-이미지 요소에 `title` 어트리뷰트를 추가시 이미지에 마우스가 긴 시간동안 오버되면 `title` 값을 표시하여 접근성을 향상시킬 수 있다. (`alt`가 SEO에 더 유리하다.)
+이미지 요소에 `title` 어트리뷰트를 추가시 이미지에 마우스를 오버되면 `title` 값을 표시하여 접근성을 향상시킬 수 있다. (`alt`가 SEO에 더 유리하다.)
+
+하지만 긴 시간이 필요하기 때문에 가상요소와 애니메이션을 사용해 다음과 같은 효과를 줄 수 있다.
+
+![image](https://github.com/user-attachments/assets/d9e3a198-b0ea-43ba-9741-73ead62b5fb3)
+
+> img 요소는 가상요소를 사용할 수 없으므로 대신 이미지와 정보를 포함하는 figure 요소를 사용한다.
 
 ## 7. 비디오 커버
 
