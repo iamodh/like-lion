@@ -9,19 +9,25 @@
 
       .playground {
         border: 10px solid maroon;
-        width: 980px;
         margin: 0 auto;
         border-radius: 20px;
         background-color: skyblue;
         padding: 10px;
 
+        height: 400px;
         display: grid;
-        gap: 10px;
 
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        /* 가로 track 생성 */
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
 
-        height: 500px;
+        /* 원룸의 위치 */
+        justify-content: normal;
+        align-content: normal;
+
+        /* frog의 위치 */
+
+        /* 원룸의 사이즈 */
       }
 
       .frog {
@@ -31,16 +37,14 @@
         border: 6px solid green;
         border-radius: 10px;
       }
+
+      .frog.first {
+      }
     </style>
   </head>
   <body>
     <div class="playground">
-      <div class="frog first">Frog</div>
-      <div class="frog">Frog</div>
-      <div class="frog">Frog</div>
-      <div class="frog">Frog</div>
-      <div class="frog">Frog</div>
-      <div class="frog">Frog</div>
+      <div class="frog first">Froggggggggggggggggggggggggg</div>
       <div class="frog">Frog</div>
     </div>
   </body>
