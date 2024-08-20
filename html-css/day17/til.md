@@ -1,4 +1,4 @@
-# 복습
+# Typography
 
 ## 1. em의 유무
 
@@ -38,7 +38,25 @@
 }
 ```
 
-## 2. CSS variable와 rgb 문법의 응용
+## 2. 웹 폰트
+
+프로젝트에 로컬 폰트를 적용하면 다른 사용자는 해당 폰트를 불러올 수 없다.
+
+따라서 웹사이트에 적용된 폰트를 다운받는 방식의 웹폰트를 사용해야 한다.
+
+## 3. 접근성 높이기
+
+`:root`에 기본 `line-height`(`1.6`)를 고정시켜주는 것이 좋다.
+
+웹사이트가 여러 폰트를 가지고 있다면 폰트에 따라 `line-height`가 달라지기 때문이다.
+
+마찬가지로 `:root`에 `font-size`의 기준값(`62.5%`)을 주고 `body`에 `1.6rem`을 주어 `16px`를 설정한다.
+
+이렇게 하면 사용자가 기준값 조절을 통해 `rem`이 적용되어 있는 요소(핵심 요소)의 폰트 사이즈를 바꿀 수 있다.
+
+![스크린샷 2024-08-19 104650](https://github.com/user-attachments/assets/943a01d4-4f22-4908-957f-315525ad2f4a)
+
+# CSS Variables
 
 `rgb`는 `rgba`와 달리 문자열 형태의 색상 값을 받기 떄문에 CSS variable과 함께 사용할 수 있다.
 
@@ -52,51 +70,120 @@
 }
 ```
 
-## 3. 웹 폰트
+# 사이드 바
 
-프로젝트에 로컬 폰트를 적용하면 다른 사용자는 해당 폰트를 불러올 수 없다.
-
-따라서 웹사이트에 적용된 폰트를 다운받는 방식의 웹폰트를 사용해야 한다.
-
-### 접근성 높이기
-
-`:root`에 기본 `line-height`(`1.6`)를 고정시켜주는 것이 좋다.
-
-웹사이트가 여러 폰트를 가지고 있다면 폰트에 따라 `line-height`가 달라지기 때문이다.
-
-마찬가지로 `:root`에 `font-size`의 기준값(`62.5%`)을 주고 `body`에 `1.6rem`을 주어 `16px`를 설정한다.
-
-이렇게 하면 사용자가 기준값 조절을 통해 `rem`이 적용되어 있는 요소(핵심 요소)의 폰트 사이즈를 바꿀 수 있다.
-
-![스크린샷 2024-08-19 104650](https://github.com/user-attachments/assets/943a01d4-4f22-4908-957f-315525ad2f4a)
-
-## 4. 사이드 바 마크업
+## 1. 마크업
 
 공통의 템플릿을 가지고 있다면 클래스를 통일해준다. (클래스 이름은 `section`으로, 하위 요소는 `section-header`, `section-contents` 등으로)
 
-> genre, section-title 같은 클래스 네이밍은 좋지 못하다.
+`genre`, `section-title` 같은 클래스 네이밍은 좋지 못하다.
 
-![image-5](https://github.com/user-attachments/assets/5bc29730-b603-429e-a1f5-91b1e109dd2d)
+```html
+<aside class="article-sidebar">
+  <section class="section">
+    <h2 class="section-title">Genre</h2>
+    <div class="section-contents">Section Contents</div>
+  </section>
 
-![image-6](https://github.com/user-attachments/assets/edc26474-2e51-4f2f-99b8-968d4a5479a5)
+  <section class="section">
+    <h2 class="section-title">Ratings</h2>
+    <div class="section-contents">Section Contents</div>
+  </section>
 
-## 5. 레이팅 구현
+  <section class="section">
+    <h2 class="section-title">Casts</h2>
+    <div class="section-contents">Section Contents</div>
+  </section>
+</aside>
+```
 
-![image-7](https://github.com/user-attachments/assets/2b3bfda2-e353-47a0-acb2-49d1ea0ec4ea)
+<img src="https://github.com/user-attachments/assets/1a0ad366-5a54-42fc-8756-c00b7fddb041" width="200px">
 
-height를 background-size의 절반만 나오게 하여 빈 별, 가득 찬 별을 보여준다.
+## 2. 레이팅 구현
 
-![image-8](https://github.com/user-attachments/assets/4f20121a-84dc-4677-8c93-ef09f7a72fb2)
+별점 개수의 내용을 표시하는 목적으로 마크업을 진행한다.
+
+```css
+.ratings {
+  .ratings {
+    box-shadow: inset 0 0 20px gold;
+    width: 240px;
+    height: 48px;
+    background-image: url(images/star.png);
+    background-size: 240px 96px;
+    overflow: hidden;
+  }
+}
+```
+
+height를 background-size의 절반만 나오게 하여 빈 별을 먼저 보여준다.
 
 컨텐츠는 overflow:hidden으로 숨겨 검색엔진만 볼 수 있도록 한다.
 
-사용자 속성과 속성 셀렉터 방식
+<img src="https://github.com/user-attachments/assets/b05986ca-f082-4f82-84a8-286d1ad28b70" width="200px">
 
-![image-10](https://github.com/user-attachments/assets/6d85689e-e04d-48c4-bb10-19e4851f9639)
+가상 요소를 사용후 같은 방법으로 가득 찬 별을 보여준다.
 
-![image-9](https://github.com/user-attachments/assets/d8ae0dc0-c266-40d8-a012-f9c77018ef77)
+```css
+.ratings::before {
+  content: " ";
+  display: block;
+  width: 0;
+  background-position: left bottom;
+  height: inherit;
+  background-image: inherit;
+  background-size: inherit;
+}
 
-## 6. 사용자 프로필
+/* 데이터에 따른 결과물 미리 셋팅 */
+.ratings.score_1::before {
+  width: 20%;
+}
+.ratings.score_2::before {
+  width: 40%;
+}
+.ratings.score_3::before {
+  width: 60%;
+}
+.ratings.score_4::before {
+  width: 80%;
+}
+.ratings.score_5::before {
+  width: 100%;
+}
+```
+
+<img src="https://github.com/user-attachments/assets/335f427f-782f-4d82-add3-3d362ab04817" width="200px">
+
+data 사용자 속성을 사용해과 속성 셀렉터를 사용해 정보를 명확하게 전달할 수 있다.
+
+```html
+<div class="ratings" data-score="3">5점 만점에 3점</div>
+```
+
+```css
+/* data-* 방식 */
+.ratings[data-score="0"]::before {
+  width: 0%;
+}
+.ratings[data-score="1"]::before {
+  width: 20%;
+}
+.ratings[data-score="2"]::before {
+  width: 40%;
+}
+.ratings[data-score="3"]::before {
+  width: 60%;
+}
+.ratings[data-score="4"]::before {
+  width: 80%;
+}
+.ratings[data-score="5"]::before {
+  width: 100%;
+}
+```
+
+## 3. 사용자 프로필
 
 이미지 요소에 `title` 어트리뷰트를 추가시 이미지에 마우스를 오버되면 `title` 값을 표시하여 접근성을 향상시킬 수 있다. (`alt`가 SEO에 더 유리하다.)
 
@@ -106,7 +193,7 @@ height를 background-size의 절반만 나오게 하여 빈 별, 가득 찬 별�
 
 > img 요소는 가상요소를 사용할 수 없으므로 대신 이미지와 정보를 포함하는 figure 요소를 사용한다.
 
-## 7. 비디오 커버
+## 4. 비디오 커버
 
 이미지 커버의 클래스 명을 재사용할 수 있다.
 

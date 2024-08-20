@@ -38,6 +38,9 @@ a {
   --color-white: #fff;
   --color-gray-50: #999;
   --color-gray-80: #222;
+  --color-gray-90: #111;
+
+  --font-ko: "Noto Sans KR";
 }
 
 /* Typography */
@@ -59,7 +62,6 @@ a {
 }
 
 .wrapper {
-  box-shadow: inset 0 0 20px purple;
   margin: 60px auto;
   width: auto;
   max-width: 1200px;
@@ -81,7 +83,6 @@ body {
 }
 
 .article-cover {
-  box-shadow: inset 0 0 20px red;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   position: relative;
@@ -111,7 +112,6 @@ body {
 }
 
 .article-main {
-  box-shadow: inset 0 0 20px blue;
   padding: 0 100px 60px 60px;
 
   display: flex;
@@ -127,6 +127,10 @@ body {
   flex-grow: 1;
 
   flex-basis: 300px;
+}
+
+.article-contents p {
+  font-family: var(--font-ko);
 }
 
 .article-title {
@@ -166,23 +170,35 @@ body {
   gap: 40px;
 }
 
+.section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  color: var(--color-white);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
 .ratings {
-  background-image: url(images/star.png);
-  background-size: 240px 96px;
   width: 240px;
   height: 48px;
+  background-image: url(images/star.png);
+  background-size: 240px 96px;
   overflow: hidden;
 }
 
 .ratings::before {
   content: " ";
   display: block;
-  height: 48px;
-  background-image: url(images/star.png);
-  background-size: 240px 96px;
+  width: 0;
   background-position: left bottom;
+  height: inherit;
+  background-image: inherit;
+  background-size: inherit;
 }
 
+/* 데이터에 따른 결과물 미리 셋팅 */
 .ratings.score_1::before {
   width: 20%;
 }
@@ -199,54 +215,14 @@ body {
   width: 100%;
 }
 
-.cover-title {
-  font-size: 64px;
-  font-weight: bold;
-  color: #fff;
-}
-
-.cover-title.new::before {
-  content: "NEW";
-  display: block;
-  background-color: #ff2e00;
-  width: fit-content;
-  padding: 7px 12px;
-  border-radius: 8px;
-  font-size: 12px;
-}
-
-.contents {
-  padding-top: 30px;
-  padding-bottom: 60px;
-  background-color: #111;
-  color: #999;
-}
-
-.container {
+.genres {
   display: flex;
-  gap: 8vw;
+  flex-wrap: wrap;
+  column-gap: 4px;
+  row-gap: 6px;
 }
 
-.container-main {
-  flex-basis: 0;
-  min-width: 0;
-  flex-grow: 1;
-}
-
-.container-sidebar {
-  width: 240px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.container-sidebar h3 {
-  color: #fff;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.genre li {
+.genres li {
   color: #aaa;
   background-color: #222;
   border-radius: 12px;
@@ -257,54 +233,16 @@ body {
   font-size: 14px;
 }
 
-.genre ul {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 4px;
-  row-gap: 6px;
-}
-
-.ratings ul {
+.casts {
   display: flex;
 }
 
-.ratings ul li {
-  width: 48px;
-  height: 48px;
-  background-image: url("./images/star.png");
-  /* 이상하게 500%해야 사이즈가 맞네요... */
-  background-size: 500%;
-  background-repeat: no-repeat;
-}
-
-.ratings ul li.filled {
-  background-position-y: -48px;
-}
-
-.castings ul {
-  display: flex;
-}
-
-.castings ul li {
-  margin-left: -20px;
+.casts li {
+  margin-right: -20px;
   width: 64px;
   height: 64px;
   border-radius: 50%;
   border: 4px solid black;
   overflow: hidden;
   box-sizing: border-box;
-}
-
-.castings ul li:first-child {
-  margin: unset;
-}
-
-@media (max-width: 700px) {
-  .container {
-    flex-direction: column;
-  }
-
-  .container-sidebar {
-    width: auto;
-  }
 }
