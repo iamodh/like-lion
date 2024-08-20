@@ -89,27 +89,39 @@ mask-image 속성을 사용해 마스킹 이미지를 불러온다.
 
 # Incredible
 
-1. 커버에 `aspect-ratio`로 이미지가 들어갈 영역을 만들고 `width: 100%`, `height: 100%`로 이미지를 넣는다.
+## 1. 커버
 
-2. 메인에 컨텐츠와 사이드바를 플렉스를 이용하여 분리한 후 가변구역과 고정구역을 설정한다. (컨텐츠에 `flex-wrap`과 `width:basis`에 `200px`과 같이 적당한 값을 주어 페이지 너비가 줄어들었을 때 사이드바가 밑으로 내려오도록 설계한다.)
+커버에 `aspect-ratio`로 이미지가 들어갈 영역을 만들고 `width: 100%`, `height: 100%`, `object-fit: cover`로 이미지를 넣는다.
 
-3. 메인 영역이 커버 위로 올라오게 하기 위해 커버에 퍼센트 값의 네거티브 마진을, 메인은 `position: relative`를 주고 서로의 `z-index`를 조정한다.
+## 2. 메인
 
-4. 글의 여러 문단을 위한 마크업은 여러 개의 p를 사용한 후 `line-height`를 설정, `margin-bottom` 값을 `1.6em`으로 준다.
+컨텐츠와 사이드바를 플렉스를 이용하여 분리한 후 가변구역과 고정구역을 설정한다.
 
-5. word-break: keep-all, text-overflow:로
+컨텐츠에 `flex-wrap`과 `width:basis`에 `300px`과 같이 적당한 값을 주어 페이지 너비가 줄어들었을 때 사이드바가 밑으로 내려오도록 설계한다.
+
+메인 영역이 커버 위로 올라오게 하기 위해 커버에 퍼센트 값의 네거티브 마진을, 메인은 `position: relative`를 주고 서로의 `z-index`를 조정한다.
+
+![image](https://github.com/user-attachments/assets/5ace676f-8d9d-4d2a-b1a7-78ecd1eefd21)
+
+## 2-1. 컨텐츠
+
+글의 여러 문단을 위한 마크업은 여러 개의 p를 사용한다.
+
+그리고 `line-height`를 설정, `margin-bottom` 값을 `1.6em`으로 주어 글 높이 맞는 여백을 준다.
+
+`:root`에 `word-break: keep-all`, `text-overflow: break-word`를 주어 가독성을 높인다.
+
+![image](https://github.com/user-attachments/assets/121e83e2-facf-45a1-9336-90aa2ca8dd99)
 
 6. 별 만들기: 이미지 스프라이트 기법
 
-- html 마크업을 시각적인 용도로 활용하는 것은 html의 목적에 반하는 일이다. 컨텐츠를 담는 용도로만 마크업을 사용한다.
+HTML 마크업은 컨텐츠를 담는 용도로만 사용한다. (`ul` 밑 `li`에 별을 하나씩 담는 것 처럼 시각적 디자인을 위해 사용하지 않는다.)
 
-- ratings div를 만들어 스프라이트 이미지의 height, width와 background-size를 적절하게 잘라 백그라운드로 적용한다. (빈 별 5개)
+하나의 ratings `div`를 만들어 별점 내용을 담고, `backgrond-image`로 스프라이트를 사용한다.
 
-- 그 위를 같은 방법으로 가상요소로 가득 찬 별로 덮는다. (background-position 이용)
+`height`, `width`와 `background-size`를 이용해 빈 별 부분만 잘라 사용한 후 같은 방법으로 그 위를 가상요소로 덮는다.
 
-- 가상요소를 5개 만들어 width를 %로 주어 별점마다의 클래스를 만든다.
-
-![image](https://github.com/user-attachments/assets/c8ff7046-4ed1-49a8-9967-b6b406036d8f)
+가상요소를 5개 만든 후 width를 %로 주어 별점의 개수를 조절한다.
 
 ```css
 .ratings {
@@ -146,3 +158,5 @@ mask-image 속성을 사용해 마스킹 이미지를 불러온다.
   width: 100%;
 }
 ```
+
+![image](https://github.com/user-attachments/assets/74c41cb6-a3d2-4045-85e6-47e138d81d00)

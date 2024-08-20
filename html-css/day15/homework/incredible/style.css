@@ -31,9 +31,22 @@ a {
   text-decoration: unset;
 }
 
+/* CSS Variables */
+:root {
+  --color-red: #ff2e00;
+
+  --color-white: #fff;
+  --color-gray-50: #999;
+  --color-gray-80: #222;
+}
+
 /* Typography */
 :root {
   font-family: "Arial";
+
+  word-break: keep-all;
+
+  overflow-wrap: break-word;
 }
 
 .container-main {
@@ -45,28 +58,145 @@ a {
   padding: 0 60px;
 }
 
-/* Components */
-
-.cover {
-  aspect-ratio: 12 / 7;
-  position: relative;
-
-  display: flex;
-  align-items: flex-end;
-
-  background: linear-gradient(0deg, #111 0%, rgba(17, 17, 17, 0) 81.45%);
-
-  padding: 0 60px;
+.wrapper {
+  box-shadow: inset 0 0 20px purple;
+  margin: 60px auto;
+  width: auto;
+  max-width: 1200px;
+  padding: 0 30px;
 }
 
-.cover img {
-  position: absolute;
-  left: 0;
-  top: 0;
+/* Components */
+
+body {
+  background-color: var(--color-gray-80);
+}
+
+.article {
+  background-color: var(--color-gray-90);
+  color: var(--color-gray-50);
+
+  z-index: 0;
+  position: relative;
+}
+
+.article-cover {
+  box-shadow: inset 0 0 20px red;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  position: relative;
+
+  margin-bottom: -6%;
   z-index: -1;
+}
+
+.article-cover img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.article-cover::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 40%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(17, 17, 17, 0) 0%,
+    rgba(17, 17, 17, 1) 100%
+  );
+}
+
+.article-main {
+  box-shadow: inset 0 0 20px blue;
+  padding: 0 100px 60px 60px;
+
+  display: flex;
+  column-gap: 100px;
+  row-gap: 48px;
+
+  flex-wrap: wrap;
+}
+
+.article-contents {
+  flex-basis: 0;
+  min-width: 0;
+  flex-grow: 1;
+
+  flex-basis: 300px;
+}
+
+.article-title {
+  color: var(--color-white);
+  font-size: 64px;
+  font-weight: bold;
+  margin-bottom: 26px;
+}
+
+.article-title-badge {
+  background-color: var(--color-red);
+  display: block;
+  width: fit-content;
+  font-size: 12px;
+  padding: 0 12px;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 8px;
+  letter-spacing: 0.18em;
+}
+
+.article-description p {
+  /* 한줄 높이 만큼 margin-bottom 설정 */
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+}
+
+.article-description p:last-child {
+  /* p요소의 마지막은 항상 margin-bottom: 0 */
+  margin-bottom: 0;
+}
+
+.article-sidebar {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.ratings {
+  background-image: url(images/star.png);
+  background-size: 240px 96px;
+  width: 240px;
+  height: 48px;
+  overflow: hidden;
+}
+
+.ratings::before {
+  content: " ";
+  display: block;
+  height: 48px;
+  background-image: url(images/star.png);
+  background-size: 240px 96px;
+  background-position: left bottom;
+}
+
+.ratings.score_1::before {
+  width: 20%;
+}
+.ratings.score_2::before {
+  width: 40%;
+}
+.ratings.score_3::before {
+  width: 60%;
+}
+.ratings.score_4::before {
+  width: 80%;
+}
+.ratings.score_5::before {
+  width: 100%;
 }
 
 .cover-title {
