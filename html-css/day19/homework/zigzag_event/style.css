@@ -366,7 +366,7 @@ a {
   margin-left: -12px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .article-header {
     flex-direction: column;
     text-align: center;
@@ -388,10 +388,11 @@ a {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 426px) {
   .tip {
     flex-direction: column !important;
   }
+
   .tip-cover {
     width: unset;
   }
@@ -399,6 +400,7 @@ a {
   .article-header h1 {
     font-size: 32px;
   }
+
   .grid-horizontal {
     grid-template-columns: none;
   }
