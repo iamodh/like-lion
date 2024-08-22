@@ -1,5 +1,6 @@
-/* Reset */
+/* 296 라인 봐주시면 감사합니다... */
 
+/* Reset */
 body,
 h1,
 h2,
@@ -148,8 +149,6 @@ a {
   display: grid;
 
   grid-template-columns: minmax(0, 1080px);
-  grid-auto-rows: 148px;
-
   gap: 30px;
 }
 
@@ -165,6 +164,8 @@ a {
 
 .tip-cover {
   aspect-ratio: 280 / 148;
+  /* 이걸 줘야 aspect-ratio가 날뛰는 걸 막을 수 있음 */
+  width: 280px;
   position: relative;
 }
 
@@ -196,7 +197,8 @@ a {
 .tip-contents {
   flex-grow: 1;
 
-  /* 없어도 침범 안함 왜? */
+  /* aspect-ratio 때문에 침범 안한다 생각했지만 cover에 width를 주자 침범하기 시작함... */
+  /* 근데 이게 창 크기가 줄어들때만 침범해서 반응형이 자연스러워서 그냥 놔둠 */
   /* flex-basis: 0 */
 
   min-width: 0;
@@ -217,7 +219,6 @@ a {
   font-size: 14px;
   margin-bottom: 12px;
 
-  display: flex;
   align-items: center;
   gap: 14px;
 }
@@ -228,7 +229,8 @@ a {
 
 .tip-contents ul li::before {
   content: " ";
-  display: block;
+  display: inline-block;
+  margin-right: 14px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -291,10 +293,12 @@ a {
   color: transparent;
 }
 
+/* card-contents 부분 높이가 왜 소숫점으로 줄어드는걸까요 ㅜㅜ */
+/* 고정 높이 줘도 줄어들던데 혹시 폰트 떄문인가요...? */
+
 .card-contents {
   padding: 20px;
   flex-grow: 1;
-  flex-shrink: 0;
 
   display: flex;
   flex-direction: column;
@@ -302,27 +306,35 @@ a {
 }
 
 .tags a {
+  display: inline-block;
   background-color: var(--color-purple-10);
   font-weight: 600;
   font-size: 14px;
   color: var(--color-purple-90);
-  padding: 2px 12px;
+  padding: 0 12px;
+  line-height: 22px;
+  height: 22px;
   border-radius: 12px;
 }
 
 .card-contents h2 {
+  min-height: calc(1em * 2);
   font-size: 24px;
   color: var(--color-black);
   font-weight: 700;
 }
 
 .card-contents p {
+  flex-grow: 1;
   font-size: 14px;
   color: var(--color-grey-90);
 }
 
 .card-footer {
   height: 60px;
+
+  /* 귀차니즘... */
+  /* 수업 때 배웠던 wing 활용할 수 있을 듯? */
   margin-left: 20px;
   border-top: 4px solid var(--color-grey-10);
 
@@ -347,4 +359,35 @@ a {
   border: 2px solid var(--color-white);
   box-sizing: border-box;
   margin-left: -12px;
+}
+
+@media (max-width: 768px) {
+  .article-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .article-header h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .article-header p {
+    flex-direction: column;
+    width: unset;
+  }
+
+  .button {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 425px) {
+  .tip {
+    flex-direction: column !important;
+  }
+  .tip-cover {
+    width: unset;
+  }
 }
