@@ -147,4 +147,4 @@ input[type="text"] {
 
 ### 페이지
 
-![alt text](image.png)
+![image](https://github.com/user-attachments/assets/9fc49cc0-f800-41d1-9a77-35dd3c3fe759)
