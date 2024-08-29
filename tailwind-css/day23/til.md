@@ -179,5 +179,5 @@ tailwind.config.js의 extends에 추가한다.
 
 #### 클래스 유틸리티 찾기
 
-CSS 속성을로 검색할 수 있는 사이트  
+CSS 속성으로 검색할 수 있는 사이트  
 https://www.creative-tim.com/twcomponents/cheatsheet
