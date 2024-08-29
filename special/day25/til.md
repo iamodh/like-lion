@@ -67,3 +67,23 @@ TTS 막는다.
 ## 화면 해설
 
 넷플릭스 👍
+
+![alt text](image-9.png)
+
+## 관련 정보
+
+- https://www.w3.org/WAI/ARIA/apg/
+
+- https://aoa.gitbook.io/skymimo
+
+- https://saramin.github.io/a11y/
+
+- https://nuli.navercorp.com/
+
+- https://www.youtube.com/aoa11y
+
+![alt text](image-10.png)
+
+카카오 접근성 서포터즈 들어가고 싶다.
+
+#
