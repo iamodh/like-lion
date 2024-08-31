@@ -30,11 +30,11 @@ body {
 </div>
 ```
 
-**식판 - 반찬 관계의 레이아웃** 마크업을 사용해 `section-header`에 유동적인 컨텐츠가 들어올 수 있게 하였다.
+**식판(section, title) - 반찬(header, headings, ...) 관계의 레이아웃** 마크업을 사용해 컨텐츠가 유동적으로 들어올 수 있게 하였다.
 
 #### title-headings
 
-![alt text](image.png)
+![image](https://github.com/user-attachments/assets/33cb8194-c1a1-474c-92f2-6aec42ebfde3)
 
 디자인을 위한 줄 바꿈이므로 `flex-basis: auto`인 상태에서 `br`을 사용해 대응이 쉽게 한다.
 
@@ -81,7 +81,9 @@ body {
 
 ## 3. panel-contents
 
-`panel` 전체의 높이가 `panel-contents`에 의해 결정되도록 가변 값 `auto`를 준다.
+`panel` 전체의 높이가 `panel-cover`가 아닌 `panel-contents`에 의해 결정되어야 한다.
+
+`ul` 요소는 다른 곳에서 사용할 수 있으므로 `list` 클래스로 만든다.
 
 #### 마크업
 
@@ -146,11 +148,11 @@ body {
 }
 ```
 
-![alt text](image-2.png)
+![image-2](https://github.com/user-attachments/assets/87d1d6ba-347b-47c6-afc1-85bd0586d945)
 
 ## 4. panel-cover
 
-panel-contents의 높이에 맞춰지도록 적절히 스타일링한다.
+`panel-contents`의 높이에 맞춰지도록 적절히 스타일링한다.
 
 #### CSS
 
@@ -211,4 +213,4 @@ cover 너비가 고정값이 아닌 반응형으로 줄어들게 하는 방법
 }
 ```
 
-![alt text](image-3.png)
+![image-3](https://github.com/user-attachments/assets/2ed6ee52-13f5-4369-af53-6f5c50eec342)
