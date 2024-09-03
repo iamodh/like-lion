@@ -1,0 +1,16 @@
+/* CSS Variables */
+:root {
+  --font-ko: "Noto Sans KR", sans-serif;
+}
+
+/* Typography */
+:root {
+  font-family: var(--font-ko);
+}
+
+/* Components */
+.wrapper {
+  box-shadow: inset 0 0 20px purple;
+  max-width: 600px;
+  margin: 100px auto;
+}
