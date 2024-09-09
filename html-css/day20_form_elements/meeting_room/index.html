@@ -14,41 +14,76 @@
     <div class="wrapper">
       <h1>회의실 예약</h1>
       <form action="#">
-        <label for="">어떤 용도로 이용할 예정이신가요?</label>
-        <select name="subject">
-          <option value="0">디자이너와의 티타임</option>
-          <option value="1">개발자와의 코드 리뷰</option>
-          <option value="2" selected>사장님과의 연봉 협상</option>
-        </select>
-        <hr />
-        <label>회의의 규모는 어떠한가요?</label>
-        <label><input type="radio" name="size" />2~8인</label>
-        <label><input type="radio" name="size" />9~20인</label>
-        <label
-          ><input type="radio" name="size" checked disabled />21~100인</label
-        >
-        <hr />
-        <label>어떤 장비가 필요 하신가요?</label>
-        <label><input type="checkbox" checked />빔 프로젝터</label>
-        <label><input type="checkbox" />화이트보드</label>
-        <label><input type="checkbox" />전동데스크</label>
-        <hr />
-        <label for="name">예약자의 성함을 알려주세요.</label>
-        <input
-          name="username"
-          value="이종찬"
-          id="name"
-          readonly
-          type="text"
-          placeholder="성함 입력"
-        />
-        <hr />
-        <label for="date">날짜를 입력 해주세요.</label>
-        <input name="date" id="date" type="date" />
-        <hr />
-        <label for="topic">회의의 주제를 남겨 주세요.</label>
-        <textarea id="topic" placeholder="주제에 대한 짧은 요약"></textarea>
-        <button type="submit">예약하기</button>
+        <fieldset>
+          <legend>일반 정보</legend>
+          <div>
+            <label for="">어떤 용도로 이용할 예정이신가요?</label>
+            <div class="field">
+              <select name="subject">
+                <option value="0">디자이너와의 티타임</option>
+                <option value="1">개발자와의 코드 리뷰</option>
+                <option value="2" selected>사장님과의 연봉 협상</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label>회의의 규모는 어떠한가요?</label>
+            <label class="choice type_radio"
+              ><input type="radio" name="size" />2~8인</label
+            >
+            <label class="choice type_radio"
+              ><input type="radio" name="size" />9~20인</label
+            >
+            <label class="choice type_radio"
+              ><input type="radio" name="size" />21~100인</label
+            >
+          </div>
+          <div>
+            <label>어떤 장비가 필요 하신가요?</label>
+            <label class="choice type_checkbox"
+              ><input type="checkbox" />빔 프로젝터</label
+            >
+            <label class="choice type_checkbox"
+              ><input type="checkbox" />화이트보드</label
+            >
+            <label class="choice type_checkbox"
+              ><input type="checkbox" />전동데스크</label
+            >
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>개인 정보</legend>
+          <div>
+            <label for="name">예약자의 성함을 알려주세요.</label>
+            <div class="field">
+              <input
+                name="username"
+                value="이종찬"
+                id="name"
+                readonly
+                type="text"
+                placeholder="성함 입력"
+              />
+            </div>
+          </div>
+          <div>
+            <label for="email">이메일을 입력 해주세요.</label>
+            <div class="field">
+              <input name="email" id="email" type="email" />
+            </div>
+          </div>
+          <div>
+            <label for="topic">회의의 주제를 남겨 주세요.</label>
+            <div class="field">
+              <textarea
+                rows="5"
+                id="topic"
+                placeholder="주제에 대한 짧은 요약"
+              ></textarea>
+            </div>
+            <button type="submit">예약하기</button>
+          </div>
+        </fieldset>
       </form>
     </div>
   </body>
