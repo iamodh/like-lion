@@ -81,3 +81,88 @@ var sub = function (x, y) {
 ```
 
 ![image](https://github.com/user-attachments/assets/e9971050-6280-4100-9872-ab562966772b)
+
+## 3. JSDoc
+
+자바스크립트의 함수는 매개변수의 개수와 인수의 개수가 일치하는지 체크하지 않는다.
+
+```js
+function add(x, y) {
+  return x + y;
+}
+
+console.log(add(2)); // NaN
+```
+
+런타임 이전에 이러한 오류를 체크하고 에러를 발생시키려면 타입스크립트와 같은 정적 타입 언어를 사용해야하는데,
+
+대신 **JSDoc**을 사용하여 코드의 이해를 위한 **가독성이 높은 주석**을 달고,
+
+**함수의 정보**와 함께 **인수의 타입에 대한 자동완성 기능**을 사용해 개발 중 실수를 줄일 수 있다.
+
+```js
+/**
+ * 이름과 나이 입력받아 출력하는 함수
+ * @param {string} name 이름 입력란 입니다!
+ * @param {number} age 나이 입력란 입니다!
+ * @returns 이름과 나이를 출력합니다~
+ */
+const lime = (name, age) => {
+  return name + age;
+};
+```
+
+<img width="300px" src="https://github.com/user-attachments/assets/03496d7d-7dcd-47cd-956a-fe8735b83417" />
+
+함수에 `@param` 태그로 인수의 정보를 표시하는 방법
+
+https://jsdoc.app/tags-param
+
+## 4. 즉시 실행 함수
+
+즉시 실행 함수란 함수 리터럴을 그룹 연산자`()`로 함수 객체가 변수에 할당하는 과정 없이 바로 실행되는 것을 말한다.
+
+즉시 실행 함수에는 주로 무기명 함수를 사용한다.
+
+```js
+(function () {
+  var a = 3;
+  var b = 5;
+  return a * b;
+});
+```
+
+즉시 실행 함수는 한 번 실행되고 사라지므로 함수 내 스코프에서 변수를 자유롭게 사용할 수 있다는 장점이 있다.
+
+#### 사용 예시
+
+```js
+let isAdult;
+
+(function init(age) {
+  let currentAge = age;
+  if (age >= 20) {
+    isAdult = true;
+  } else {
+    isAdult = false;
+  }
+})(20);
+```
+
+위 코드에서 즉시 실행 함수 `init`은 내부 변수 `currentAge`를 이용해 전역 변수 `isAdult`를 초기화한다.
+
+```js
+let isAdult;
+let currentAge = 20;
+
+if (currentAge >= 20) {
+  isAdult = true;
+} else {
+  isAdult = false;
+}
+
+console.log(isAdult); // true
+console.log(currentAge); // 20
+```
+
+즉시 실행 함수를 사용하지 않은 경우 초기화하는데 사용된 변수 `currentAge`를 캡슐화하지 않았기 때문에, 코드의 유지보수성이 떨어진다.
