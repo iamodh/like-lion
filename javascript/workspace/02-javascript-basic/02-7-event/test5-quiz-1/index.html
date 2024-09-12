@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <h2>회원가입</h2>
+    <form id="form">
+      <div>
+        <label for="username">이름 : <input id="username" type="text" /></label>
+      </div>
+      <div>
+        <label for="phone">전화번호 : <input id="phone" type="text" /></label>
+      </div>
+      <div>
+        <label for="job"
+          >직업 :
+          <select id="job">
+            <option value="student">학생</option>
+            <option value="worker">직장인</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <button id="join" type="submit">회원가입</button>
+        <button id="reset" type="reset">취소</button>
+      </div>
+    </form>
+    <div id="result"></div>
+    <script src="./main.js"></script>
+  </body>
+</html>
