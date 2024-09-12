@@ -3,13 +3,12 @@ function solution(A, B) {
   let sum = 0;
   while (i--) {
     let minA = Math.min(...A);
-    let minB = Math.min(...B);
+    let maxB = Math.max(...B);
 
     A.splice(A.indexOf(minA), 1);
-    B.splice(B.indexOf(minB), 1);
+    B.splice(B.indexOf(maxB), 1);
 
-    console.log(minA, minB, A, B);
-    sum += minA * minB;
+    sum += minA * maxB;
   }
 
   return sum;
