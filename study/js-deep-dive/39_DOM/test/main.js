@@ -1,0 +1,1 @@
+foo.innerHTML = "foo";
