@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function getMainData() {
+        console.log("child log", opener);
+      }
+      opener.mainFun();
+
+      var childData = 20;
+      function childFun() {
+        console.log("childFun call");
+      }
+
+      opener.child = this;
+
+      function myClose() {
+        opener.location.href = "http://www.naver.com";
+        close();
+      }
+    </script>
+  </head>
+  <body>
+    <h1>I am Child Page!!</h1>
+    <button onClick="getMainData()">get main data</button>
+    <button onClick="myClose()">close</button>
+  </body>
+</html>

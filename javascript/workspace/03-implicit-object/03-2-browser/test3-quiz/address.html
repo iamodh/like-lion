@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      opener.child = this;
+      var address = null;
+
+      function handleSubmit() {
+        address = document.getElementById("address").value;
+
+        onClose();
+      }
+
+      function onClose() {
+        if (address === "") {
+          opener.onEmptyAddress();
+        } else {
+          opener.getAddress();
+        }
+        close();
+      }
+    </script>
+  </head>
+  <body>
+    <h1>주소</h1>
+    <input type="text" id="address" />
+    <button type="submit" onclick="handleSubmit()">입력</button>
+  </body>
+</html>
