@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>location test</h3>
+    <button onclick="locationTest()">location test</button>
+    <script>
+      function locationTest() {
+        console.log(location.href);
+        console.log(location.protocol);
+        console.log(location.host);
+        console.log(location.hostname);
+        console.log(location.port);
+        console.log(location.pathname);
+        console.log(location.search);
+        console.log(location.hash);
+        console.log(location.origin);
+      }
+    </script>
+    <br />
+    <button onclick="goGoogle1()">go google - href</button>
+    <button onclick="goGoogle2()">go google - replace</button>
+    <script>
+      function goGoogle1() {
+        location.href = "http://www.google.com";
+      }
+      function goGoogle2() {
+        location.replace("http://www.google.com");
+      }
+    </script>
+    <h3>history test</h3>
+    <button onclick="goBack()">back</button>
+    <button onclick="goForward()">forward</button>
+    <button onclick="go()">go</button>
+    <script>
+      function goBack() {
+        history.back();
+      }
+      function goForward() {
+        history.forward();
+      }
+      function go() {
+        let input = prompt("숫자를 입력해주세요.");
+        if (isNaN(input)) {
+          alert("숫자가 아닙니다.");
+        } else {
+          let no = parseInt(input);
+          history.go(no);
+        }
+      }
+    </script>
+    <h3>navigator test</h3>
+    <button onclick="navigatorTest()">navigator test</button>
+    <script>
+      function navigatorTest() {
+        console.log(navigator.cookieEnabled);
+        console.log(navigator.language);
+        console.log(navigator.onLine);
+        console.log(navigator.userAgent);
+      }
+    </script>
+  </body>
+</html>
