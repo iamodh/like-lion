@@ -1,3 +1,60 @@
+# 💡TIL
+
+## 1. DOM 노드
+
+HTML 파싱 후 생성된 DOM에서 노드들은 문서 노드, 요소 노드, 어트리뷰트 노드, 태그 노드, 주석 노드의 종류가 있고,
+
+각자의 규칙대로 태그 노드에 자식 또는 형제 노드로 연결된다.
+
+주석 노드 또한 태그 노드에 연결되며, 자바스크립트 코드로 접근할 수 있다.
+
+[주석 노드 접근 방법](https://claude.ai/chat/6b3e46f5-3801-4fea-bd6f-c91697cecd56)
+
+## 2. Node 셀렉터
+
+#### 프로토타입 체인
+
+프로토타입이 뭔지 아직 잘 모르겠지만...
+
+셀렉터를 사용할 때 document 객체 말고도 Element 객체,
+
+다음과 같이 노드 자체에서 셀렉터 메서드를 호출할 수 있다는 것을 알게 되었다.
+
+```js
+const $fruits = document.getElementById("fruits");
+const $listFromFruits = $fruits.getElementsByTagName("li");
+```
+
+#### 종류
+
+querySelector, getElementBy 등 셀렉터의 사용에 따라 반환되는 객체의 자료 구조가 다르다.
+
+하지만 querySelector의 실행 속도가 다른 셀렉터 메서드에 비해 빠른 것으로 알려저 있어서
+
+id 어트리뷰트가 있는 요소를 제외하고는 querySelector의 사용이 권장된다.
+
+#### 셀렉터 반환 객체의 자료구조
+
+getElementBy... 메서드를 사용하면 HTMLCollection 객체가,
+
+querySelector를 사용하면 NodeList 객체가 반환된다.
+
+HTMLCollection 객체와 NodeList의 프로퍼티 childNodes는 유사객체배열로,
+
+index 사용과 length 프로퍼티를 가지고 있지만 forEach 사용이 불가하다.
+
+NodeList는 Document.prototype과 Element.prototype에 정의된 forEach사용이 가능하지만,
+
+Array.prototype에서 제공되는 forEach, filter 등과 같은 다양한 메서드 사용을 위해
+
+스프레드 문법으로 배열로 변환 후 사용하는 것이 편리하다.
+
+```js
+[...$elems].forEach((elem) => (elem.style.color = "blue"));
+```
+
+# 📖 실습
+
 ## 1. DOM API를 통해 획득한 노드를 할당하는 변수 이름 컨벤션
 
 ```js
