@@ -13,35 +13,25 @@
         <th>설명</th>
         <th>예시</th>
     </tr>
-    <tr>
-        <td>hash</td>
-        <td>주소값에 붙어이쓴 anchor 값 반환</td>
-        <td>#test</td>
+     <tr>
+        <td>href</td>
+        <td>URL 반환</td>
+        <td>http://www.example.com:8080/search?q=devmo#test</td>
+    </tr>
+     <tr>
+        <td>protocol</td>
+        <td>프로토콜 반환</td>
+        <td>/search</td>
     </tr>
     <tr>
         <td>host</td>
         <td>URL의 도메인과 포트 반환</td>
         <td>www.example.com:8080</td>
     </tr>
-    <tr>
+     <tr>
         <td>hostname</td>
         <td>URL의 도메인 반환</td>
         <td>www.example.com</td>
-    </tr>
-    <tr>
-        <td>href</td>
-        <td>URL 반환</td>
-        <td>http://www.example.com:8080/search?q=devmo#test</td>
-    </tr>
-    <tr>
-        <td>origin</td>
-        <td>프로토콜 + URL의 도메인 + 포트 반환</td>
-        <td>http://www.example.com:8080</td>
-    </tr>
-    <tr>
-        <td>pathname</td>
-        <td>URL 경로 반환</td>
-        <td>/search</td>
     </tr>
     <tr>
         <td>port</td>
@@ -49,14 +39,24 @@
         <td>8080</td>
     </tr>
     <tr>
-        <td>protocol</td>
-        <td>프로토콜 반환</td>
+        <td>pathname</td>
+        <td>URL 경로 반환</td>
         <td>/search</td>
     </tr>
     <tr>
         <td>search</td>
         <td>쿼리 스트링 반환</td>
         <td>?q=devmo</td>
+    </tr>
+        <tr>
+        <td>hash</td>
+        <td>주소값에 붙어이쓴 anchor 값 반환</td>
+        <td>#test</td>
+    </tr>
+     <tr>
+        <td>origin</td>
+        <td>프로토콜 + URL의 도메인 + 포트 반환</td>
+        <td>http://www.example.com:8080</td>
     </tr>
 </tbody>
 </table>
@@ -70,10 +70,6 @@
       <th>설명</th>
     </tr>
     <tr>
-      <td>assign(url)</td>
-      <td>새로운 주소로 이동</td>
-    </tr>
-    <tr>
       <td>reload()</td>
       <td>페이지 새로고침</td>
     </tr>
@@ -84,11 +80,31 @@
   </tbody>
 </table>
 
+> `location.href`에 값을 할당해 주소 이동을 하면 뒤로 가기를 사용할 수 있지만, `replace()`는 사용할 수 없다.
+
 ## 2. history
+
+브라우저의 히스토리 정보를 이용하는 객체
+
+- `back()`
+- `forward()`
+- `go()`: 숫자를 받아 해당 인덱스의 히스토리로 이동
 
 ## 3. screen
 
+브라우저가 실행되는 스크린 정보를 나타내는 객체
+
+- `width()`, `height()`: 스크린 전체 사이즈
+- `availWidth()`, `availHeight()`: 사용 가능한 스크린 사이즈
+
 ## 4. navigator
+
+브라우저의 정보 혹은 기능에 접근할 수 있는 객체
+
+- `cookieEnabled`
+- `language`
+- `onLine`: 브라우저 네트워크 연결 여부
+- `userAgent`: 브라우저, 플랫폼 정보
 
 # document 내장 객체
 
