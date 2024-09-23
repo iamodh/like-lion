@@ -53,7 +53,7 @@ Array.prototype에서 제공되는 forEach, filter 등과 같은 다양한 메�
 [...$elems].forEach((elem) => (elem.style.color = "blue"));
 ```
 
-# 📖 실습
+# 📖 검색
 
 ## 1. DOM API를 통해 획득한 노드를 할당하는 변수 이름 컨벤션
 
