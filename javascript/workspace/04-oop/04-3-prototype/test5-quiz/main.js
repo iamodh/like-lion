@@ -12,7 +12,7 @@ function School(kor, eng) {
 }
 
 function HighSchool(kor, eng) {
-  School.apply(this, [kor]);
+  School.apply(this, [kor, eng]);
 
   this.grade = function () {
     if (this.avg() >= 90) return "A";
