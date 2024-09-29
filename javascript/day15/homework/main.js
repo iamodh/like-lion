@@ -12,7 +12,6 @@ let products = [
 
 const $options = document.getElementById("options");
 const $result = document.getElementById("result");
-const $total = document.getElementById("total");
 
 // js 파일 로드 시에 products를 화면에 표시
 window.addEventListener("load", () => {
@@ -24,20 +23,53 @@ window.addEventListener("load", () => {
   });
 });
 
-$options.addEventListener("change", (e) => {
-  let total = 0;
-  $result.textContent = "";
+const selectProducts = function () {
+  // 선택된 상품을 담는 배열
+  let bag = [];
+
   const selectedProducts = [...$options.querySelectorAll("option:checked")];
   selectedProducts.forEach((product) => {
-    const $li = document.createElement("li");
-
-    // result에 선택된 products 추가
-    $li.textContent = product.innerText;
-    $result.append($li);
-
-    // total에 result의 products 가격 합 표시
+    // 선택된 product를 bag에 push한다.
     const index = products.findIndex((item) => item.name === product.value);
-    total += products[index].price;
-    $total.textContent = `총액: ${total}원`;
+    bag.push(products[index]);
   });
+
+  return bag;
+};
+
+// result에 bag 목록을 출력하는 함수
+const printBag = function (bag) {
+  const $h3 = document.createElement("h3");
+  $h3.textContent = "선택한 상품";
+  $result.appendChild($h3);
+
+  bag.forEach((item) => {
+    const $li = document.createElement("li");
+    $li.textContent = `${item.name} - ${item.price}`;
+
+    $result.appendChild($li);
+  });
+};
+
+// total에 bag 목록의 총 가격을 출력한다.
+
+const printTotal = function (bag) {
+  const $total = document.getElementById("total");
+  let total = 0;
+
+  bag.forEach((item) => {
+    total += item.price;
+  });
+
+  $total.textContent = `총액 : ${total}`;
+};
+
+$options.addEventListener("change", (e) => {
+  $result.textContent = "";
+  const bag = selectProducts();
+
+  if (bag.length > 0) {
+    printBag(bag);
+    printTotal(bag);
+  }
 });
