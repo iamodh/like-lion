@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>결재창</h3>
+    <p><span id="price"></span> 원을 결제하겠습니다.</p>
+    <input type="text" id="cardNo" />
+    <br />
+    <button onclick="sendPG()">결제</button>
+
+    <script>
+      let totalPrice = opener.getTotalPrice();
+      document.getElementById("price").innerHTML = totalPrice;
+
+      function sendPG() {
+        opener.paymentSuccess(document.getElementById("cardNo").value);
+        window.close();
+      }
+    </script>
+  </body>
+</html>
