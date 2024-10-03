@@ -136,6 +136,8 @@ obj.sayHello(); // Hello, 홍길동
 
 프로퍼티는 생성자 내에서 this.프로퍼티명 형태로 선언하고 메서드는 생성자 외부 클래스 영역에 선언한다.
 
+메서드를 선언식으로 선언하면 prototype에, 표현식으로 선언하면 객체에 따로 가지게 된다.
+
 ## 4. private 멤버
 
 접근제한자는 멤버의 이용 범위를 제한한다.
@@ -143,3 +145,37 @@ obj.sayHello(); // Hello, 홍길동
 자바스크립트는 접근제한자를 제공하지 않는다.
 
 대신 클래스 내부의 멤버 앞에 #을 붙여 클래스 외부에서 사용하지 못하게 할 수 있다.
+
+private 멤버를 사용하면 외부와의 결합도가 낮아져 유지보수성이 증가한다.
+
+## 5. static 멤버
+
+멤버는 객체 멤버와 static 멤버로 구분된다.
+
+객체 멤버는 인스턴스 생성시 마다 메모리에 할당이 된다.
+
+객체별 메모리 할당이 필요하지 않는 멤버에 static 키워드를 붙여주면 클래스 생성자에서 멤버에 바로 접근할 수 있다.
+
+```js
+class MyClass {
+  data1 = 10;
+  static data2 = 20;
+  myFun1() {
+    console.log(`myFun1 call... ${this.data1} ${this.data2}`);
+
+  static myFun2() {
+    console.log(`myFun2 call... ${this.data1} ${this.data2}`); // myFUn2 call... undefined 20
+  }
+  }
+}
+
+MyClass.myFun2();
+console.log(MyClass.data2); // 20
+```
+
+static 멤버 data2, myFun2는 객체 멤버와 따로 메모리에 할당이되어 객체 멤버를 이용할 수 없다.
+
+```js
+const obj = new MyClass();
+console.log(obj.data2); // undefined
+```
