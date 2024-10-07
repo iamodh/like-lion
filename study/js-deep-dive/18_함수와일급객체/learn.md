@@ -6,7 +6,7 @@
 
 **스터디 진행 방식** : 발표자가 요약한 스터디 주제의 내용 발표
 
-**원본 링크** : [https://huchu.link/94yJ1l3](https://huchu.link/94yJ1l3)
+**원본 링크** : [https://huchu.link/a5N7Ea7](https://huchu.link/94yJ1l3)
 
 ---
 
