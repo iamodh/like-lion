@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    // 컴파일된 js 파일을 생성할 위치
+    "outDir": "./build",
+    // 컴파일 대상에 자바스크립트 파일을 포함 (es6 => es5)
+    "allowJs": true,
+    // es6 스타일의 모듈화 방식 사용
+    "esModuleInterop": true,
+    // json 파일을 코드에서 객체로 바로 이용
+    "resolveJsonModule": true,
+    // ts -> js 컴파일 시 js.map 파일 자동 생성
+    // ts 디버깅을 위해 만들어 주는 것이 좋다. (에러 발생한 줄 매핑)
+    "sourceMap": true,
+    // any 타입 허용하지 않는다.
+    "noImplicitAny": true,
+    // 컴파일된 js 코드 스타일
+    "target": "ES5",
+    // jsx 구문을 react 형태의 js로 변형
+    "jsx": "react",
+    // 모듈화 방식을 target과 맞추어 설정
+    "module": "CommonJS"
+  },
+  // transfile 시킬 대상 폴더 파일
+  "include": ["./src/**/*"],
+  // transfile 제외 시킬 파일
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
