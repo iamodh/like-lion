@@ -105,3 +105,23 @@ delete Person.prototype.sayHello;
 ```
 
 프로토타입의 프로퍼티를 변경 또는 삭제하려면 프로토타입에 직접 접근해야한다.
+
+```js
+function Person(name) {
+  this.name = name;
+}
+
+const me = new Person("Lee");
+
+const parent = {
+  constructor: person,
+  sayHello() {
+    console.log(`Hi!, my name is ${this.name}`);
+  },
+};
+
+Person.prototype = parent;
+
+Object.setPrototypeOf(me, parent);
+me.sayHello();
+```
