@@ -26,7 +26,7 @@ function solution(genres, plays) {
 
   // play 수가 가장 많은 장르
   const arr2 = [...playsPerGenre];
-  arr2.sort((a, b) => b[1].plays - a[1].plays);
+  arr2.sort((a, b) => b[1] - a[1]);
   console.log(arr2);
 
   const ans = [];
@@ -45,6 +45,6 @@ function solution(genres, plays) {
 }
 
 solution(
-  ["classic", "pop", "classic", "classic", "pop"],
-  [500, 600, 150, 800, 2500]
+  ["classic", "pop", "classic", "classic", "pop", "jazz", "jazz", "classic"],
+  [500, 600, 150, 800, 2500, 1000, 500, 1000]
 );
