@@ -4,6 +4,8 @@ function solution(genres, plays) {
     arr.push([i, { genres: genres[i], plays: plays[i] }]);
   }
 
+  console.log(arr);
+
   // arr로 sort 후 map으로 변환
   arr.sort((a, b) => b[1].plays - a[1].plays);
   const sortedAlbums = new Map();
