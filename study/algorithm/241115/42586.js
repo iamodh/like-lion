@@ -26,4 +26,4 @@ function solution(progresses, speeds) {
   }
 }
 
-solution([93, 30, 55], [3, 30, 15]);
+solution([93, 30, 55], [1, 30, 5]);
