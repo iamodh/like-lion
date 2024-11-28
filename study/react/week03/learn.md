@@ -1,10 +1,8 @@
 ## useEffect
 
-### 설명
-
 컴포넌트의 생명주기(마운트, 언마운트, 업데이트)에 특정 이벤트를 등록하기 위해 사용하는 훅
 
-### 사용
+### API
 
 ```jsx
 useEffect(setup, dependencies?);
@@ -24,7 +22,7 @@ useEffect(setup, dependencies?);
 
 3. 값이 있을 때: 값이 바뀔 때 마다 setup이 실행됨
 
-### 역할
+### useEffect의 역할
 
 ```jsx
 useEffect(() => {
@@ -50,11 +48,9 @@ useEffect 내에서 격리되어 관리
 
 ## useMemo
 
-### 설명
-
 지정한 함수를 호출하여 반환받은 **결과값**을 내부에 저장(캐싱)하는 함수
 
-### 사용
+### API
 
 ```jsx
 const calculateValue = function(){ ... };
@@ -71,4 +67,176 @@ const cachedValue = useMemo(calculateValue, dependencies);
 
 빈 배열을 지정하면 의존성이 없으므로 매번 캐시된 값을 반환
 
-### 역할
+### 사용 예시
+
+```jsx
+function countActiveUsers(users) {
+  console.log("활성 사용자 수를 세는중...");
+  return users.filter((user) => user.active).length;
+}
+
+/* ... */
+
+// 기존 코드
+// const count = countActiveUsers(users);
+
+// useMemo를 사용한 코드
+const count = useMemo(() => countActiveUsers(users), [users]);
+```
+
+`active` 상태인 `user`의 수를 구하는 `countActiveUser`에 `useMemo`를 사용해 주었다.
+
+기존에는 `input`에 의해 `inputs` state가 변경될 때 마다 리렌더링에 의해 `countActiveUsers` 함수가 실행되었다.
+
+`useMemo`를 사용하면 `countActiveUsers` 함수의 실행 값을 메모이제이션 하여, 의존성 배열의 `users`가 변경되지 않았으면 이전 값을 캐싱하고,
+
+`users`가 `onToggle` 함수에 의해 변경되었을 때 함수가 실행되어 `count`의 값을 변경한다.
+
+> 만약 의존성 배열이 빈 배열이면, **마운트 시점**의 함수의 실행 값이 계속 캐싱된다.
+
+## useCallback
+
+컴포넌트가 다시 렌더링되더라도 함수가 다시 생성되지 않고 캐시된 함수를 사용
+
+### API
+
+```jsx
+const cachedFn = useCallback(fn, dependencies);
+```
+
+**fn**: 캐싱할 함수
+
+**dependencies**: 의존 객체 배열
+
+`useCallback`의 의존 객체 배열에는 캐싱할 함수 내부에서 사용되는 `props`, `state` 등 함수 외부에서 참조되는 모든 변수를 지정해주어야 한다. (클로저에 의해 이전 함수 스코프의 변수가 사용되어 함수 최신화가 안 될 수 있기 때문)
+
+### 사용 예시
+
+```jsx
+const onCreate = useCallback(() => {
+  const user = {
+    id: nextId.current,
+    username,
+    email,
+  };
+  setUsers(users.concat(user));
+
+  setInputs({
+    username: "",
+    email: "",
+  });
+  nextId.current += 1;
+}, [users, username, email]);
+```
+
+함수 외부에서 참조하는 값 `users`, `username`, `email을` 의존성 배열에 넣어주었다.
+
+(`user`, `id`는 내부에서 동적 생성하므로 안 넣어줘도 됨)
+
+## React.memo
+
+컴포넌트를 memoize한 후 리렌더링 될 때 **props가 변경되지 않으면** memoize된 컴포넌트를 반환
+
+### API
+
+```jsx
+const MemoizedComponent = React.memo(SomeComponent, arePropsEqual?)
+```
+
+**SomeComponent**: memoize할 대상 컴포넌트
+
+**arePropsEqual**: memoize된 컴포넌트를 반환할지, 컴포넌트를 다시 호출할지를 결정하는 함수 (선택)
+
+**리턴값**: memoize된 SomeComponent
+
+### React.memo를 사용하기 위한 조건
+
+```jsx
+function CreateUser({ username, email, onChange, onCreate }) {
+  console.log("CreateUser 컴포넌트 렌더링");
+  return (
+    <div>
+      <input
+        name="username"
+        placeholder="계정명"
+        onChange={onChange}
+        value={username}
+      />
+      <input
+        name="email"
+        placeholder="이메일"
+        onChange={onChange}
+        value={email}
+      />
+      <button onClick={onCreate}>등록</button>
+    </div>
+  );
+}
+
+export default React.memo(CreateUser);
+```
+
+CreateUser의 props에서 username과 email는 변경되면 리렌더가 필요하다.
+
+하지만 리렌더될 때 onChange와 onCreate까지 재생성되는데, 이 이유로 memoization이 동작하지 않는다.
+
+따라서 onChange와 onCreate 함수는 useCallbak 훅을 사용하여 리렌더링시에도 재생성되지 않게 관리해야한다.
+
+```jsx
+const onChange = useCallback(
+  (e) => {
+    const { name, value } = e.target;
+    setInputs({
+      ...inputs,
+      [name]: value,
+    });
+  },
+  [inputs]
+);
+
+const onCreate = useCallback(() => {
+  const user = {
+    id: nextId.current,
+    username,
+    email,
+  };
+  setUsers(users.concat(user));
+
+  setInputs({
+    username: "",
+    email: "",
+  });
+  nextId.current += 1;
+}, [username, email, users]);
+```
+
+위 코드에서는 onChange와 onCreate를 useCallback으로 감싸주었지만, 변수의 최신 값을 유지하기 위해 의존성 배열에 외부에서 참조하는 변수를 넣어주었다.
+
+이때문에 users를 사용하는 함수(onToggle)에서 users를 변경하면 onCreate 함수는 재생성된다.
+
+useState의 setter에서 **함수형 업데이트**를 해주어 useCallback의 의존성 배열을 빈 배열로 만들면 다른 함수에서 state를 변경하더라도 서로 영향을 주고받지 않을 수 있다.
+
+```jsx
+const onChange = useCallback((e) => {
+  const { name, value } = e.target;
+  setInputs((inputs) => ({
+    ...inputs,
+    [name]: value,
+  }));
+}, []);
+
+const onCreate = useCallback(() => {
+  const user = {
+    id: nextId.current,
+    username,
+    email,
+  };
+  setUsers((users) => users.concat(user));
+
+  setInputs({
+    username: "",
+    email: "",
+  });
+  nextId.current += 1;
+}, [username, email]);
+```
