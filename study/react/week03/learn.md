@@ -240,3 +240,207 @@ const onCreate = useCallback(() => {
   nextId.current += 1;
 }, [username, email]);
 ```
+
+## useReducer
+
+컴포넌트의 상태 관리가 복잡한 경우, 상태 업데이트 로직을 컴포넌트에서 분리시키기 위해 사용한다.
+
+### API
+
+```jsx
+function reducer(state, action){ ... }
+const [state, dispatch] = useReducer(reducer, initialArg, init?);
+```
+
+**매개변수**
+
+- reducer: state와 action을 받아 새로운 상태를 반환해주는 함수
+  - state: reducer에 전달 될 상태 값
+  - action: 업데이트를 위한 정보 (객체)
+
+**리턴값**
+
+- state: 상태값이 저장된 getter
+- dispatch: 상태값을 변경하는 setter 함수. dispatch에 전달한 인자값이 reducer의 두번째 인자값(action)으로 전달됨
+
+### Action의 예시
+
+```jsx
+// 카운터에 1을 더하는 액션
+{
+  type: 'INCREMENT'
+}
+// 카운터에 1을 빼는 액션
+{
+  type: 'DECREMENT'
+}
+// input 값을 바꾸는 액션
+{
+  type: 'CHANGE_INPUT',
+  key: 'email',
+  value: 'tester@react.com'
+}
+// 새 할 일을 등록하는 액션
+{
+  type: 'ADD_TODO',
+  todo: {
+    id: 1,
+    text: 'useReducer 배우기',
+    done: false,
+  }
+}
+```
+
+> type 값을 대문자와 \_ 로 구성하는 컨벤션
+
+### 예제
+
+```jsx
+import React, { useReducer } from "react";
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "INCREMENT":
+      return state + 1;
+    case "DECREMENT":
+      return state - 1;
+    default:
+      return state;
+  }
+}
+
+function Counter() {
+  const [number, dispatch] = useReducer(reducer, 0);
+
+  const onIncrease = () => {
+    dispatch({ type: "INCREMENT" });
+  };
+
+  const onDecrease = () => {
+    dispatch({ type: "DECREMENT" });
+  };
+
+  return (
+    <div>
+      <h1>{number}</h1>
+      <button onClick={onIncrease}>+1</button>
+      <button onClick={onDecrease}>-1</button>
+    </div>
+  );
+}
+
+export default Counter;
+```
+
+**reducer**
+
+reducer 함수는 switch 문 안에서 action에 따라 변경된 state를 리턴하고, 이 리턴 값은 useReducer에 의해 관리되어 다시 매개변수 state로 전달된다.
+
+**useReducer**
+
+useReducer는 dispatch 함수의 매개변수로 지정된 action을 주어 reducer 함수 안의 state를 변경하고, 이를 리턴값 state로 사용한다.
+
+### reducer 함수 내부에서 불변성 지키기
+
+reducer 함수는 순수함수여야하기 때문에 내부적으로 불변성을 지켜야 한다.
+
+```jsx
+import React, { useRef, useReducer, useMemo, useCallback } from "react";
+import UserList from "./UserList";
+import CreateUser from "./CreateUser";
+
+function countActiveUsers(users) {
+  console.log("활성 사용자 수를 세는중...");
+  return users.filter((user) => user.active).length;
+}
+
+const initialState = {
+  inputs: {
+    username: "",
+    email: "",
+  },
+  users: [
+    {
+      id: 1,
+      username: "velopert",
+      email: "public.velopert@gmail.com",
+      active: true,
+    },
+    {
+      id: 2,
+      username: "tester",
+      email: "tester@example.com",
+      active: false,
+    },
+    {
+      id: 3,
+      username: "liz",
+      email: "liz@example.com",
+      active: false,
+    },
+  ],
+};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "CHANGE_INPUT":
+      return {
+        ...state,
+        inputs: {
+          ...state.inputs,
+          [action.name]: action.value,
+        },
+      };
+    default:
+      return state;
+  }
+}
+
+function App() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const { users } = state;
+  const { username, email } = state.inputs;
+
+  const onChange = useCallback((e) => {
+    const { name, value } = e.target;
+    dispatch({
+      type: "CHANGE_INPUT",
+      name,
+      value,
+    });
+  }, []);
+
+  return (
+    <>
+      <CreateUser username={username} email={email} onChange={onChange} />
+      <UserList users={users} />
+      <div>활성사용자 수 : 0</div>
+    </>
+  );
+}
+
+export default App;
+```
+
+**onChange 동작 흐름**
+
+1. `useReducer의` 매개변수로 전달된 `initialState`가 지정된다.
+
+2. `dispatch` 함수에서 `action이` 전달된다. (`name`과 `value`는` input` node의 `attribute` 속성)
+
+3. `reducer` 함수 내부에서 `action.type`의 케이스에 따라 변경된 `state`가 리턴된다. (불변성을 유지하기 위해 `state`를 spread하여 객체를 새로 생성했다.)
+
+### useState vs useReducer
+
+`useState`, `useReducer`를 자주 사용해보고 `useReducer`가 더 편리한 상황에 대한 발견이 필요하다.
+
+`setter` 를 한 함수에서 여러번 사용해야 하는 일이 발생한다면 `useReducer`를 쓸까에 대한 고민을 해보는 것을 추천한다.
+
+````jsx
+setUsers(users => users.concat(user));
+setInputs({
+username: '',
+email: ''
+});
+```jsx
+````
