@@ -436,11 +436,10 @@ export default App;
 
 `setter` 를 한 함수에서 여러번 사용해야 하는 일이 발생한다면 `useReducer`를 쓸까에 대한 고민을 해보는 것을 추천한다.
 
-````jsx
-setUsers(users => users.concat(user));
-setInputs({
-username: '',
-email: ''
-});
 ```jsx
-````
+setUsers((users) => users.concat(user));
+setInputs({
+  username: "",
+  email: "",
+});
+```

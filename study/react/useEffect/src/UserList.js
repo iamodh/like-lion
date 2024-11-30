@@ -4,12 +4,12 @@ import React, { useEffect } from "react";
 function User({ user, onRemove, onToggle }) {
   // 왜 최초 실행 시 마운트 -> 언마운트 -> 마운트 순서로 로그가 찍히는가? -> strictMode 때문
   // onRemove에서는 컴포넌트가 언마운트되는가?
-  useEffect(() => {
-    console.log("컴포넌트가 화면에 나타남");
-    return () => {
-      console.log("컴포넌트가 화면에서 사라짐");
-    };
-  }, []);
+  // useEffect(() => {
+  //   console.log("컴포넌트가 화면에 나타남");
+  //   return () => {
+  //     console.log("컴포넌트가 화면에서 사라짐");
+  //   };
+  // }, []);
 
   // useEffect(() => {
   //   console.log("user 값이 설정됨");
@@ -24,8 +24,6 @@ function User({ user, onRemove, onToggle }) {
   // useEffect(() => {
   //   console.log(user);
   // });
-
-  console.log("User 컴넌트 렌더링");
 
   return (
     <div>
