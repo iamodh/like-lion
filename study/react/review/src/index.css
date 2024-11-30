@@ -1,0 +1,29 @@
+/* Reset */
+
+ul {
+  padding: unset;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+/* Components */
+
+.menu {
+  border-bottom: none;
+}
+
+.menu-active {
+  border-bottom: 2px solid red;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
