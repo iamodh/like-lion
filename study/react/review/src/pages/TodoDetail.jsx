@@ -22,6 +22,7 @@ function TodoDetail() {
         <div>
           <div>제목: {data.item.title}</div>
           <div>내용: {data.item.content}</div>
+          <div>done: {data.item.done + ""}</div>
           <Link to="edit">수정하기</Link>
           <button
             type="button"
@@ -31,7 +32,7 @@ function TodoDetail() {
           >
             목록
           </button>
-          <Outlet />
+          <Outlet context={{ item: data.item, refetch: fetchDetail }} />
         </div>
       )}
     </>
